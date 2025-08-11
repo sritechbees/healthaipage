@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ProductHeroModern() {
   return (
@@ -68,18 +68,18 @@ export default function ProductHeroModern() {
           transition={{ delay: 0.9, duration: 0.8 }}
           className="mt-8 flex flex-wrap gap-4 justify-center"
         >
-          <a
+          <Link
             href="/ourproduct/realtimeglucosetracking"
             className="px-8 py-4 bg-yellow-400 text-black rounded-full font-semibold shadow-lg hover:bg-yellow-300 transition"
           >
             Explore CGM
-          </a>
-          <a
+          </Link>
+          <Link
             href="#ecg"
             className="px-8 py-4 bg-white text-black rounded-full font-semibold shadow-lg hover:bg-gray-200 transition"
           >
             Explore Smart ECG
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
     </section>
