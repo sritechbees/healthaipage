@@ -13,6 +13,7 @@ import TrackySteps from './howtoconnectcgm';
 import AppFeatures from './feactureofapp';
 import CGMComparison from './cgmcomparison';
 import App_layout from '@/layout/app-alyout';
+import ProductHero from './product_hero';
 
 const items = [
   {
@@ -54,6 +55,7 @@ export default function CGMWelcomeKit() {
 
   return (
     <App_layout>
+      <ProductHero/>
     <div className="relative overflow-hidden">
       {/* Particle Background */}
       <Particles
