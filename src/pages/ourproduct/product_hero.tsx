@@ -75,7 +75,7 @@ export default function ProductHeroModern() {
             Explore CGM
           </Link>
           <Link
-            href="#ecg"
+            href="/ourproduct/earlydetectionecg"
             className="px-8 py-4 bg-white text-black rounded-full font-semibold shadow-lg hover:bg-gray-200 transition"
           >
             Explore Smart ECG

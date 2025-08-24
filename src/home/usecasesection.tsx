@@ -1,72 +1,100 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 const useCases = [
   {
-    title: '📊 Faster Diagnosis',
-    description: 'AI-assisted tools reduce time to diagnose illnesses by processing complex data rapidly.',
+    title: "Faster Diagnosis",
+    description:
+      "AI-assisted tools reduce time to diagnose illnesses by processing complex data rapidly.",
+    image: "/home/City Hospital.jpg",
   },
   {
-    title: '🧬 Personalized Treatment',
-    description: 'Treatment plans tailored to individual genetic and lifestyle data for better outcomes.',
+    title: "Personalized Treatment",
+    description:
+      "Treatment plans tailored to individual genetic and lifestyle data for better outcomes.",
+    image: "/home/City Hospital.jpg",
   },
   {
-    title: '🌐 Remote Healthcare Access',
-    description: 'Telehealth and monitoring tools bridge the gap for rural and remote communities.',
+    title: "Remote Healthcare Access",
+    description:
+      "Telehealth and monitoring tools bridge the gap for rural and remote communities.",
+    image: "/home/City Hospital.jpg",
   },
   {
-    title: '⚙️ Efficient Workflows',
-    description: 'Automation streamlines clinical operations and reduces admin overhead.',
+    title: "Efficient Workflows",
+    description:
+      "Automation streamlines clinical operations and reduces admin overhead.",
+    image: "/home/City Hospital.jpg",
   },
   {
-    title: '🔍 Real-time Monitoring',
-    description: 'Continuous patient data monitoring improves response times and decision-making.',
+    title: "Real-time Monitoring",
+    description:
+      "Continuous patient data monitoring improves response times and decision-making.",
+    image: "/home/City Hospital.jpg",
+  },
+  {
+    title: "Preventive Healthcare",
+    description:
+      "AI-powered insights support early detection and proactive care strategies.",
+    image: "/home/City Hospital.jpg",
   },
 ];
 
 export default function UseCasesSection() {
-  useEffect(() => {
-    AOS.init({ once: true, duration: 1000 });
-  }, []);
-
   return (
-   <section
-  className="w-full px-4 md:px-12 py-16 relative bg-gradient-to-r from-white via-blue-50 to-white overflow-hidden"
-  style={{ backgroundImage: "url('/images/usecase-bg.jpg')" }} // Add this if you want to use inline image directly
->
-  {/* Background image layer (optional, for better control) */}
-  <div
-    className="absolute inset-0 bg-[url('/background/teambg.jpg')] bg-cover bg-center"
-    aria-hidden="true"
-  ></div>
-
-  {/* Content layer */}
-  <div className="relative z-10">
-    <h2
-      data-aos="fade-up"
-      className="text-3xl md:text-4xl font-bold text-center text-white mb-12 relative inline-block"
-    >
-      <span className="border-b-4 border-blue-400 pb-1">Use Cases & Benefits</span>
-    </h2>
-
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-      {useCases.map((item, index) => (
-        <div
-          key={index}
-          data-aos="zoom-in"
-          data-aos-delay={index * 100}
-          className="bg-white/70 backdrop-blur-lg shadow-xl rounded-2xl p-6 border border-blue-100 transition transform hover:scale-105 hover:shadow-blue-300"
-        >
-          <h3 className="text-xl font-semibold text-blue-700 mb-3">{item.title}</h3>
-          <p className="text-gray-700 text-sm">{item.description}</p>
+    <section className="relative w-full py-16 bg-gradient-to-r from-blue-950/80 via-black/70 to-blue-900/70">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        {/* Heading */}
+        <div className="text-center mb-14">
+          <h2 className="text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Use Cases & Benefits
+          </h2>
+          <p className="mt-4 text-gray-300 max-w-2xl mx-auto text-lg">
+            Discover how AI-powered healthcare solutions transform diagnosis,
+            treatment, and patient care efficiency.
+          </p>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
 
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          {useCases.map((item, idx) => (
+            <div
+              key={idx}
+              className="group relative rounded-2xl shadow-xl overflow-hidden bg-gray-900/70 backdrop-blur-md border border-gray-700"
+            >
+              {/* Image */}
+              <div className="relative w-full h-72">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Title (always visible on image bottom) */}
+             <h3 className="text-white font-semibold text-center p-4 text-lg">{item.title}</h3>
+
+              {/* Popup Content */}
+              <div className="absolute bottom-0 left-0 right-0 h-[70%] translate-y-full group-hover:translate-y-0 transition-all duration-700 ease-in-out">
+                <div className="h-full w-full bg-gradient-to-t from-blue-950 via-blue-900/95 to-transparent rounded-t-[30%] p-8 flex flex-col items-center justify-center text-center">
+                  <h3 className="text-xl font-bold text-cyan-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-300 mt-3 text-sm">
+                    {item.description}
+                  </p>
+                  <button className="mt-5 flex items-center justify-center gap-2 text-cyan-400 font-semibold hover:text-white transition-colors">
+                    Learn More <ArrowRight size={18} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

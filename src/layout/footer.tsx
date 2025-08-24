@@ -31,8 +31,9 @@ export default function Footer() {
           <h3 className="text-lg font-semibold mb-4">Contact</h3>
           <ul className="text-sm text-gray-400 space-y-2">
             <li>Email: <a href="mailto:support@healthai.com" className="text-blue-400">support@healthai.com</a></li>
-            <li>Phone: <a href="tel:+1234567890" className="text-blue-400">+1 234 567 890</a></li>
-            <li>Location: San Francisco, CA</li>
+            <li>Phone (India): <a href="tel:+919445266583" className="text-blue-400">+91-9445266583</a></li>
+            <li>Phone (USA): <a href="tel:+19493519624" className="text-blue-400">+1 949-351-9624</a></li>
+            <li>Location: Irvine, CA & India</li>
           </ul>
         </div>
 

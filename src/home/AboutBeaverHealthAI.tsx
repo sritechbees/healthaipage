@@ -1,97 +1,86 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { FaStethoscope, FaHeartbeat, FaChartLine } from 'react-icons/fa';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { FaHospitalUser, FaHeartbeat, FaRobot } from 'react-icons/fa';
 
-export default function AboutBeaverHealthAI() {
+export default function AboutBeaverHealthAI_Dark() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
-    <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 px-4 md:px-10 lg:px-20 text-white overflow-hidden">
-      {/* 🔵 Background Image */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[url('/background/teambg.jpg')] bg-cover bg-center opacity-100"></div>
+    <section className="relative bg-gray-900 py-16 px-6 md:px-12 lg:px-24 overflow-hidden">
+      {/* Background Neon Glow */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-10 left-20 w-72 h-72 bg-blue-600/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-20 w-96 h-96 bg-purple-600/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-40 right-40 w-80 h-80 bg-yellow-500/20 rounded-full blur-2xl"></div>
       </div>
 
-      {/* 🔵 Foreground Content */}
-      <div className="relative z-10">
-        {/* Title */}
-        <motion.div
-          className="max-w-4xl mx-auto text-center"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            About <span className="text-yellow-500">BeaverHealthAI</span>
-          </h1>
-          <p className="text-lg md:text-xl text-white">
-            Empowering Healthcare through AI, Smart Platforms & Medical Innovation.
-          </p>
-        </motion.div>
+      {/* Title */}
+      <div className="max-w-3xl mx-auto text-center mb-14" data-aos="fade-up">
+        <h2 className="text-4xl md:text-5xl font-bold text-white leading-snug">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+            BeaverHealthAI
+          </span>
+        </h2>
+        <p className="mt-4 text-lg md:text-xl text-gray-300">
+          AI-Powered Healthcare • Smart Platforms • Predictive Data
+        </p>
+      </div>
 
-        {/* Description */}
-        <motion.div
-          className="max-w-5xl mx-auto mt-10 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <p className="text-md md:text-lg text-white leading-relaxed">
-            BeaverHealthAI is on a mission to transform traditional healthcare into a
-            smart, data-driven ecosystem. From medical product distribution to intelligent
-            platforms and AI-powered decision-making, we deliver the future of healthcare—today.
-          </p>
-        </motion.div>
+      {/* Content Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {[
+          {
+            title: 'Smart Medical Supply',
+            desc: 'AI-driven logistics delivering critical medical devices, prosthetics, and healthcare tools worldwide.',
+            icon: <FaHospitalUser className="text-5xl text-blue-400 drop-shadow-glow" />,
+            aos: 'flip-left',
+            bg: "/home/Medical_Supply.jpg",
+          },
+          {
+            title: 'AI Health Platforms',
+            desc: 'Virtual monitoring, AI triaging, and patient engagement tools that redefine hospital-free healthcare.',
+            icon: <FaHeartbeat className="text-5xl text-pink-400 drop-shadow-glow" />,
+            aos: 'flip-left',
+            bg: "/home/Health_Platforms.jpg",
+          },
+          {
+            title: 'Predictive Intelligence',
+            desc: 'Harnessing real-time data & machine learning for faster diagnoses and precision treatment plans.',
+            icon: <FaRobot className="text-5xl text-purple-400 drop-shadow-glow" />,
+            aos: 'flip-left',
+            bg: "/home/Predictive_Intelligence.jpg",
+          },
+        ].map((item, index) => (
+          <div
+            key={index}
+            data-aos={item.aos}
+            data-aos-delay={index * 200}
+            className="relative group bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-2xl p-8 shadow-lg overflow-hidden hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] transition-all duration-500"
+          >
+            {/* Hover Background Image */}
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-40 transition-opacity duration-500"
+              style={{ backgroundImage: `url(${item.bg})` }}
+            ></div>
 
-        {/* Focus Areas */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20">
-          {[
-            {
-              title: 'Medical Products Distribution',
-              desc: 'We supply essential medical equipment, smart prosthetics, and assistive devices to hospitals, clinics, and consumers through intelligent logistics.',
-              icon: <FaStethoscope className="text-4xl text-blue-600" />,
-              delay: 0.2,
-              bg: "/home/vision.jpg",
-            },
-            {
-              title: 'Digital Health Platforms',
-              desc: 'Our platforms integrate remote monitoring, AI-based triaging, and patient engagement tools that improve care accessibility and reduce hospital burden.',
-              icon: <FaHeartbeat className="text-4xl text-pink-500" />,
-              delay: 0.4,
-              bg: "/home/services1.jpg",
-            },
-            {
-              title: 'Data Analytics & AI-driven Care',
-              desc: 'We harness real-time data and predictive analytics to support clinical decisions, early diagnoses, and personalized treatment strategies.',
-              icon: <FaChartLine className="text-4xl text-purple-600" />,
-              delay: 0.6,
-              bg: "/home/vision.jpg",
-            },
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              className="relative group p-8 bg-gradient-to-br from-white to-blue-100 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: item.delay }}
-            >
-              {/* Card Hover Background */}
-              <div
-                className="absolute inset-0 bg-cover bg-center rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-0"
-                style={{ backgroundImage: `url(${item.bg})` }}
-              ></div>
+            {/* Card Content */}
+            <div className="relative z-10">
+              <div className="flex justify-center mb-6">{item.icon}</div>
+              <h3 className="text-xl font-semibold text-white text-center mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                {item.title}
+              </h3>
+              <p className="text-gray-400 group-hover:text-white text-center leading-relaxed">{item.desc}</p>
+            </div>
 
-              <div className="relative z-10">
-                <div className="flex items-center justify-center mb-4">{item.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center group-hover:text-blue-700">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 text-sm text-center leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+            {/* Neon underline effect */}
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full group-hover:w-3/4 transition-all duration-500 z-10"></span>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -10,22 +10,33 @@ import TechnologyStack from "@/home/technologies";
 import ImpactStatistics from "@/home/ImpactStatistics";
 import LatestBlogs from "@/home/LatestBlogs";
 
-
-
 export default function Home() {
   return (
     <div>
-      <Header/>
-      <Hero/>
-      <AboutBeaverHealthAI/>
-      <ExploreSolutions/>
-      <WhyChoose/>
-      <UseCasesSection/>
-      <CollaborationSection/>
-      <TechnologyStack/>
-      <ImpactStatistics/>
-      <LatestBlogs/>
-      <Footer/>
+      <Header />
+      <Hero />
+
+      {/* Background Wrapper Section */}
+      <div
+        className="relative bg-fixed bg-cover bg-center"
+        style={{ backgroundImage: "url('/background/teambg.jpg')" }} // <-- change path
+      >
+        <div className="relative z-10">
+          <AboutBeaverHealthAI />
+          <ExploreSolutions />
+          <WhyChoose />
+          <UseCasesSection />
+          <CollaborationSection />
+          <TechnologyStack />
+          <ImpactStatistics />
+          <LatestBlogs />
+        </div>
+
+        {/* Optional overlay for readability */}
+        <div className="absolute inset-0 bg-black/40 z-0"></div>
+      </div>
+
+      <Footer />
     </div>
   );
 }
