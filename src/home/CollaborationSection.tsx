@@ -1,98 +1,69 @@
 'use client';
 
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectFade } from 'swiper/modules';
 import Image from 'next/image';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
 
-const partners = [
-  {
-    name: 'City Hospital',
-    logo: '/home/City Hospital.jpg',
-    type: 'Clinic',
-  },
-  {
-    name: 'LabX Diagnostics',
-    logo: '/partners/diagnostic1.png',
-    type: 'Diagnostic Center',
-  },
-  {
-    name: 'Govt Health Org',
-    logo: '/home/City Hospital.jpg',
-    type: 'Government Body',
-  },
-  {
-    name: 'AI Care Clinic',
-    logo: '/partners/hospital2.png',
-    type: 'Clinic',
-  },
-  {
-    name: 'RapidTest Labs',
-    logo: '/home/City Hospital.jpg',
-    type: 'Diagnostic Center',
-  },
-  {
-    name: 'Public Health Dept',
-    logo: '/partners/govt2.png',
-    type: 'Government Body',
-  },
+const slides = [
+  { title: 'AI-Powered Healthcare', image: '/home/City_Hospital.jpg' },
+  { title: 'Smart Diagnostics', image: '/home/LabX Diagnostics.jpg' },
+  { title: 'Trusted Government Partners', image: '/home/Govt Health Org.jpg' },
+  { title: 'Next-Gen Clinics', image: '/home/AI Care Clinic.jpg' },
+  { title: 'Advanced Labs', image: '/home/RapidTest Labs.jpg' },
+  { title: 'Public Health Impact', image: '/home/Public Health Dept.jpg' },
 ];
 
-export default function CollaborationSection() {
-  useEffect(() => {
-    AOS.init({ once: true, duration: 1000 });
-  }, []);
+export default function PhotoShootSection() {
+  const [activeTitle, setActiveTitle] = useState(0);
 
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/background/teambgopsit.jpg" // Replace with your background image path
-          alt="Background"
-          fill
-          className="object-cover object-center"
-        />
-        {/* Optional dark overlay for readability */}
-        <div className="absolute inset-0"></div>
-      </div>
-
-     
-      {/* Content */}
-      <div className="relative z-20 pt-24 pb-20 px-4 md:px-12">
-        <h2
-          data-aos="fade-up"
-          className="text-3xl md:text-4xl font-bold text-center text-white mb-10 relative inline-block"
+    <section className="relative w-full bg-gray-50 py-20">
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        {/* Swiper with Fade effect */}
+        <Swiper
+          modules={[Autoplay, EffectFade]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          effect="fade"
+          speed={1000}
+          loop
+          onSlideChange={(swiper) => setActiveTitle(swiper.realIndex)}
+          className="w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl"
         >
-          <span className="border-b-4 border-blue-400 pb-1">
-            Collaboration & Partnerships
-          </span>
-        </h2>
-
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-8 items-center">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              data-aos="zoom-in"
-              data-aos-delay={index * 100}
-              className="flex flex-col items-center justify-center bg-blue-50 p-4 rounded-xl shadow-md hover:shadow-lg transition"
-            >
-              <div className="w-24 h-24 relative mb-3">
+          {slides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <div className="relative w-full h-full">
                 <Image
-                  src={partner.logo}
-                  alt={partner.name}
+                  src={slide.image}
+                  alt={slide.title}
                   fill
-                  className="object-contain"
+                  className="object-cover"
+                  priority
                 />
+                <div className="absolute inset-0 bg-black/40" />
               </div>
-              <p className="text-blue-700 font-semibold text-sm text-center">{partner.name}</p>
-              <span className="text-xs text-gray-500">{partner.type}</span>
-            </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* Animated Titles */}
+        <div className="mt-10 h-16 flex items-center justify-center">
+          {slides.map((slide, index) => (
+            <h2
+              key={index}
+              className={`absolute text-2xl md:text-4xl font-bold transition-all duration-700 ${
+                activeTitle === index
+                  ? 'opacity-100 translate-y-0 text-blue-600'
+                  : 'opacity-0 translate-y-5'
+              }`}
+            >
+              {slide.title}
+            </h2>
           ))}
         </div>
       </div>
-
-     
     </section>
   );
 }

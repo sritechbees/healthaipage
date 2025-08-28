@@ -7,7 +7,7 @@ import Image from 'next/image';
 const features = [
   {
     title: 'Trusted AI & ML Technology',
-    image: '/product/sabari.jpeg',
+    image: '/home/Trusted AI_ML Technology.jpg',
   },
   {
     title: 'End-to-End Healthtech Solutions',
@@ -15,15 +15,15 @@ const features = [
   },
   {
     title: 'Seamless Integration with Hospitals',
-    image: '/home/hero2.jpg',
+    image: '/home/Seamless Integration with Hospitals.jpg',
   },
   {
     title: 'Regulatory Compliant Products',
-    image: '/home/hero2.jpg',
+    image: '/home/Regulatory Compliant Products1.jpg',
   },
   {
     title: 'Expert Advisory & Research Team',
-    image: '/home/vision.jpg',
+    image: '/home/Expert Advisory & Research Team.jpg',
   },
 ];
 

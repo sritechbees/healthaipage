@@ -8,37 +8,37 @@ const useCases = [
     title: "Faster Diagnosis",
     description:
       "AI-assisted tools reduce time to diagnose illnesses by processing complex data rapidly.",
-    image: "/home/City Hospital.jpg",
+    image: "/home/Faster Diagnosis.jpg",
   },
   {
     title: "Personalized Treatment",
     description:
       "Treatment plans tailored to individual genetic and lifestyle data for better outcomes.",
-    image: "/home/City Hospital.jpg",
+    image: "/home/Personalized Treatment.jpg",
   },
   {
     title: "Remote Healthcare Access",
     description:
       "Telehealth and monitoring tools bridge the gap for rural and remote communities.",
-    image: "/home/City Hospital.jpg",
+    image: "/home/Remote Healthcare Access.jpg",
   },
   {
     title: "Efficient Workflows",
     description:
       "Automation streamlines clinical operations and reduces admin overhead.",
-    image: "/home/City Hospital.jpg",
+    image: "/home/Efficient Workflows.jpg",
   },
   {
     title: "Real-time Monitoring",
     description:
       "Continuous patient data monitoring improves response times and decision-making.",
-    image: "/home/City Hospital.jpg",
+    image: "/home/Real-time Monitoring.jpg",
   },
   {
     title: "Preventive Healthcare",
     description:
       "AI-powered insights support early detection and proactive care strategies.",
-    image: "/home/City Hospital.jpg",
+    image: "/home/Preventive Healthcare.jpg",
   },
 ];
 
