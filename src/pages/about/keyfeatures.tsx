@@ -3,6 +3,7 @@
 import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import TeamSection from '@/common/meetourteam';
 
 
 const features = [
@@ -30,6 +31,8 @@ const features = [
 
 export default function KeyFeatures() {
   return (
+    <div>
+      <TeamSection/>
     <section className="relative z-10 bg-gray-950 text-white overflow-hidden">
       {/* 🔹 Video Background Section */}
       <div className="relative w-full h-[60vh] md:h-[110vh] overflow-hidden">
@@ -92,6 +95,7 @@ export default function KeyFeatures() {
         </div>
       </div>
     </section>
+    </div>
     
   );
 }

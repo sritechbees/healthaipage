@@ -12,7 +12,16 @@ import {
   FaFileMedical,
 } from 'react-icons/fa';
 
-const features = [
+// ✅ Define a type for feature items
+type FeatureItem = {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+  image: string;
+};
+
+// ✅ Strongly typed features array
+const features: FeatureItem[] = [
   {
     icon: <FaShoppingCart className="text-5xl text-yellow-300" />,
     title: 'Retail & E-commerce',
@@ -71,15 +80,15 @@ export default function WhatWeDo() {
 }
 
 // 🌀 Individual block with parallax effect
-function FeatureBlock({ item, reverse }: { item: any; reverse: boolean }) {
-  const ref = useRef(null);
+function FeatureBlock({ item, reverse }: { item: FeatureItem; reverse: boolean }) {
+  const ref = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['0.1 1', '0.9 0'], // start when enters, end when exits
   });
 
   // Parallax effect for image
-  const y = useTransform(scrollYProgress, [0, 1], [-50, 50]); // moves slower
+  const y = useTransform(scrollYProgress, [0, 1], [-50, 50]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
 
   return (
