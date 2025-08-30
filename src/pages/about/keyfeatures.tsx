@@ -4,6 +4,7 @@ import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
+
 const features = [
   {
     title: 'Real-Time Monitoring',
@@ -29,18 +30,25 @@ const features = [
 
 export default function KeyFeatures() {
   return (
-    <section className="relative z-10 py-20 px-6 md:px-16 bg-black text-white overflow-hidden">
-      {/* Background Image */}
-      <Image
-        src="/background/keyfeatures.jpg" // Replace with your AI-medical background
-        alt="Features Background"
-        fill
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-40 z-0"
-      />
-      <div className="absolute inset-0 z-0" />
-
-      {/* Content */}
-      <div className="relative z-10">
+    <section className="relative z-10 bg-gray-950 text-white overflow-hidden">
+      {/* 🔹 Video Background Section */}
+      <div className="relative w-full h-[60vh] md:h-[110vh] overflow-hidden">
+        <video
+          className="absolute inset-0 w-full h-full object-cover opacity-90"
+          src="/videos/homepagevedio.mp4" // 👉 replace with your video path
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="relative z-10 flex items-center justify-center h-full">
+         
+        </div>
+      </div>
+      
+      {/* 🔹 Key Features Section */}
+      <div className="relative z-10 py-20 px-6 md:px-16">
         <h2 className="text-4xl font-bold text-center mb-12">Key Features</h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -84,5 +92,6 @@ export default function KeyFeatures() {
         </div>
       </div>
     </section>
+    
   );
 }

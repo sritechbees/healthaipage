@@ -11,36 +11,12 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
 const technologies = [
-  {
-    title: 'AI, Machine Learning, Data Science',
-    icon: <FaBrain className="text-4xl text-blue-600" />,
-    desc: 'Empowering predictions, automation, and insights across the health spectrum.',
-  },
-  {
-    title: 'Secure Cloud Infrastructure',
-    icon: <FaCloud className="text-4xl text-green-600" />,
-    desc: 'Scalable, compliant, and secure data handling via cloud-native infrastructure.',
-  },
-  {
-    title: 'Interoperable APIs for EMR/EHR',
-    icon: <FaLink className="text-4xl text-purple-600" />,
-    desc: 'Seamlessly integrates with existing systems for unified healthcare workflows.',
-  },
-  {
-    title: 'Advanced Security & Compliance',
-    icon: <FaShieldAlt className="text-4xl text-red-500" />,
-    desc: 'HIPAA, GDPR compliant systems ensuring data privacy and trust.',
-  },
-  {
-    title: 'Mobile-First Platforms',
-    icon: <FaMobileAlt className="text-4xl text-pink-500" />,
-    desc: 'Healthcare solutions designed for accessibility anytime, anywhere.',
-  },
-  {
-    title: 'Analytics & Visualization',
-    icon: <FaChartLine className="text-4xl text-yellow-500" />,
-    desc: 'Transforming raw health data into meaningful insights and trends.',
-  },
+  { title: 'AI, Machine Learning, Data Science', icon: <FaBrain className="text-5xl text-blue-500" /> },
+  { title: 'Secure Cloud Infrastructure', icon: <FaCloud className="text-5xl text-green-500" /> },
+  { title: 'Interoperable APIs for EMR/EHR', icon: <FaLink className="text-5xl text-purple-500" /> },
+  { title: 'Advanced Security & Compliance', icon: <FaShieldAlt className="text-5xl text-red-500" /> },
+  { title: 'Mobile-First Platforms', icon: <FaMobileAlt className="text-5xl text-pink-500" /> },
+  { title: 'Analytics & Visualization', icon: <FaChartLine className="text-5xl text-yellow-500" /> },
 ];
 
 export default function TechnologyStack() {
@@ -50,10 +26,11 @@ export default function TechnologyStack() {
 
   return (
     <section
-      className="w-full bg-cover bg-center bg-no-repeat py-16 px-6 md:px-12 relative"
+      className="w-full bg-cover bg-center bg-no-repeat py-20 relative overflow-hidden"
       style={{ backgroundImage: "url('/background/teamb.jpg')" }}
     >
-      {/* <div className="absolute inset-0 bg-black/60"></div> */}
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-black/50"></div>
 
       <div className="relative z-10">
         <h2
@@ -63,30 +40,30 @@ export default function TechnologyStack() {
           <span className="border-b-4 border-blue-400 pb-1">Technology Stack</span>
         </h2>
 
-        {/* Swiper Carousel */}
+        {/* Trending Scroll Animation (Swiper Marquee Style) */}
         <Swiper
           modules={[Autoplay]}
-          autoplay={{ delay: 2500, reverseDirection: true, disableOnInteraction: false }}
+          autoplay={{ delay: 0, disableOnInteraction: false }}
+          speed={3000} // smooth scrolling speed
           loop={true}
-          spaceBetween={30}
-          slidesPerView={1}
+          spaceBetween={50}
+          slidesPerView={3}
           breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            640: { slidesPerView: 4 },
+            1024: { slidesPerView: 6 },
           }}
         >
           {technologies.map((tech, index) => (
             <SwiperSlide key={index}>
-              <div
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 h-full"
-              >
-                <div className="mb-4 flex justify-center">{tech.icon}</div>
-                <h3 className="text-lg font-semibold text-center text-gray-900 mb-2">
+              <div className="flex flex-col items-center justify-center group">
+                {/* Icon with hover effect */}
+                <div className="mb-3 transform transition-transform duration-500 group-hover:scale-125 group-hover:rotate-6">
+                  {tech.icon}
+                </div>
+                {/* Title with fade animation */}
+                <p className="text-white text-sm md:text-base font-medium opacity-80 group-hover:opacity-100 transition duration-300 text-center">
                   {tech.title}
-                </h3>
-                <p className="text-sm text-gray-600 text-center">{tech.desc}</p>
+                </p>
               </div>
             </SwiperSlide>
           ))}

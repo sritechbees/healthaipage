@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
 import { useCallback } from 'react';
-import { FaArrowRight } from 'react-icons/fa';
 import type { Engine } from 'tsparticles-engine';
 
 export default function HeroSection() {
@@ -14,6 +13,10 @@ export default function HeroSection() {
   }, []);
 
   return (
+    <div>
+      <div>
+    
+      </div>
     <section className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-blue-900 to-black">
       {/* Particle Background */}
       <Particles
@@ -27,7 +30,7 @@ export default function HeroSection() {
             shape: { type: 'circle' },
             opacity: { value: 0.5 },
             size: { value: { min: 1, max: 3 } },
-            move: { enable: true, speed: 1, direction: 'none', outModes: { default: 'bounce' } },
+            move: { enable: true, speed: 1, outModes: { default: 'bounce' } },
           },
           interactivity: {
             events: { onHover: { enable: true, mode: 'repulse' } },
@@ -38,9 +41,9 @@ export default function HeroSection() {
         className="absolute top-0 left-0 w-full h-full z-0"
       />
 
-      {/* Background AI + Medical Image Overlay */}
+      {/* Background Image Overlay */}
       <Image
-        src="/background/aboutbg.jpg" // Replace with your image
+        src="/background/aboutbg.jpg"
         alt="AI Medical"
         fill
         className="object-cover opacity-40 z-0"
@@ -48,33 +51,28 @@ export default function HeroSection() {
 
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+        {/* Animated Heading */}
         <motion.h1
           className="text-4xl md:text-6xl font-bold drop-shadow-xl"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
         >
           BeaverHealthAI LLP
         </motion.h1>
 
+        {/* Animated Subtext */}
         <motion.p
-          className="mt-4 text-lg md:text-2xl max-w-2xl"
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
+          className="mt-6 text-lg md:text-2xl max-w-2xl leading-relaxed"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 1, ease: 'easeOut' }}
         >
-          Revolutionizing Healthcare with AI, Data Intelligence, and Smart Medical Technologies.
+          Revolutionizing Healthcare with AI, Data Intelligence, and
+          Smart Medical Technologies.
         </motion.p>
-
-        <motion.a
-          href="#about"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="mt-8 inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-6 py-3 rounded-full transition"
-        >
-          Discover Our Story<FaArrowRight />
-        </motion.a>
       </div>
     </section>
+    </div>
   );
 }
