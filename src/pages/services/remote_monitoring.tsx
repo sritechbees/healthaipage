@@ -1,88 +1,67 @@
 'use client';
 
-import App_layout from "@/layout/app-alyout";
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
 
-const services = [
-  {
-    title: 'Remote Monitoring',
-    desc: 'Extend care beyond hospital walls using IoT',
-    details:
-      'Monitor patients remotely with connected devices and real-time alerts, ensuring timely interventions and proactive care.',
-  },
-  {
-    title: 'Digital Health Records',
-    desc: 'Enable secure data sharing for doctors and hospitals',
-    details:
-      'Securely store and share health records digitally to improve clinical workflows and continuity of care.',
-  },
-  {
-    title: 'Advanced Diagnostics',
-    desc: 'Enhance precision and speed by analyzing data using AI',
-    details:
-      'Leverage artificial intelligence to detect abnormalities, reduce diagnostic errors, and support better clinical decisions.',
-  },
-  {
-    title: 'Predictive Analytics',
-    desc: 'Identify health risks before they occur using ML models',
-    details:
-      'Analyze patient data to predict potential conditions and reduce hospital readmissions through early detection.',
-  },
-  {
-    title: 'Telemedicine Integration',
-    desc: 'Connect patients and doctors via secure video & chat',
-    details:
-      'Enable remote consultations and follow-ups, making healthcare more accessible and reducing in-clinic visits.',
-  },
-  {
-    title: 'Health Data Insights',
-    desc: 'Convert medical data into actionable intelligence',
-    details:
-      'Use data visualization and trend analysis to support hospital management, patient outcomes, and operational decisions.',
-  },
-];
-
-export default function HealthAIServices() {
+export default function RemoteMonitoringPage() {
   return (
-    <App_layout>
-    <div className="min-h-screen mt-16 bg-gradient-to-br from-white via-blue-50 to-white p-6 flex flex-col items-center">
-      <h2 className="text-3xl font-bold text-center text-blue-800 mb-10">Our HealthAI Services</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
-        {services.map((item, index) => (
-          <div key={index} className="group perspective w-full h-64">
-            <div className="relative w-full h-full transition-transform duration-700 transform-style preserve-3d group-hover:rotate-y-180">
-              {/* Front */}
-              <div className="absolute inset-0 bg-white border border-blue-100 rounded-xl shadow-lg p-6 flex flex-col justify-center backface-hidden">
-                <h3 className="text-xl font-semibold text-indigo-700">{item.title}</h3>
-                <p className="mt-2 text-sm text-gray-600">{item.desc}</p>
-                <span className="mt-4 text-xs text-indigo-500">Hover to flip</span>
-              </div>
-              {/* Back */}
-              <div className="absolute inset-0 bg-indigo-600 text-white rounded-xl p-6 rotate-y-180 backface-hidden">
-                <h4 className="text-lg font-semibold">{item.title}</h4>
-                <p className="mt-2 text-sm">{item.details}</p>
-                <div className="mt-4 text-xs text-right text-indigo-200">AI-powered</div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+    <section className="bg-gray-50 py-20">
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        {/* Title */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-5xl font-bold text-gray-900 mb-4"
+        >
+          Remote Monitoring
+        </motion.h1>
 
-      {/* Custom CSS for 3D Flip */}
-      <style>{`
-        .perspective {
-          perspective: 1000px;
-        }
-        .preserve-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-      `}</style>
-    </div>
-    </App_layout>
+        {/* Subtitle */}
+        <p className="text-lg text-gray-600 mb-10">
+          Extend care beyond hospital walls using medical devices and IoT.
+        </p>
+
+        {/* Image */}
+        <div className="relative w-full h-80 mb-10 rounded-2xl overflow-hidden shadow-lg">
+          <Image
+            src="/home/remote-monitoring.jpg" // 🔄 replace with actual image
+            alt="Remote Monitoring"
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        {/* Content */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="bg-white p-8 rounded-2xl shadow-md text-left text-gray-700 leading-relaxed"
+        >
+          <p className="mb-4">
+            Our <strong>Remote Monitoring</strong> solutions empower doctors and
+            caregivers to continuously track patient health metrics such as
+            heart rate, oxygen levels, and blood pressure using IoT-enabled
+            devices.
+          </p>
+          <p>
+            This proactive approach reduces hospital readmissions, ensures
+            timely intervention, and enhances patient comfort by bringing care
+            directly to their homes.
+          </p>
+        </motion.div>
+
+        {/* Back Button */}
+        <div className="mt-8">
+          <Link href="/services">
+            <button className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
+              ← Back to Services
+            </button>
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }

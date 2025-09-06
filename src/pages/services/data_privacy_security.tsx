@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function DoctorEnablementPage() {
+export default function DataPrivacyPage() {
   return (
     <section className="bg-gray-50 py-20">
       <div className="max-w-6xl mx-auto px-6 text-center">
@@ -15,19 +15,19 @@ export default function DoctorEnablementPage() {
           transition={{ duration: 0.5 }}
           className="text-5xl font-bold text-gray-900 mb-4"
         >
-          Doctor Enablement
+          Data Privacy & Security
         </motion.h1>
 
         {/* Subtitle */}
         <p className="text-lg text-gray-600 mb-10">
-          Streamline clinical workflows with AI assistants and voice-to-text EMR.
+          Build trust and compliance using Blockchain and consent layers.
         </p>
 
-        {/* Image */}
+        {/* Hero Image */}
         <div className="relative w-full h-80 mb-10 rounded-2xl overflow-hidden shadow-lg">
           <Image
-            src="/home/doctor-enablement.jpg" // 🔄 replace with actual image
-            alt="Doctor Enablement"
+            src="/home/data-privacy.jpg" // 🔄 Replace with your image path
+            alt="Data Privacy & Security"
             fill
             className="object-cover"
           />
@@ -41,21 +41,21 @@ export default function DoctorEnablementPage() {
           className="bg-white p-8 rounded-2xl shadow-md text-left text-gray-700 leading-relaxed"
         >
           <p className="mb-4">
-            Our <strong>Doctor Enablement</strong> platform equips physicians
-            with AI-driven tools that automate repetitive tasks, improve
-            decision-making, and optimize time spent with patients.
+            Protecting sensitive health data is at the core of patient trust. Our{" "}
+            <strong>Data Privacy & Security</strong> solutions integrate{" "}
+            <em>Blockchain technology</em> and advanced consent management to
+            ensure secure, tamper-proof, and transparent information sharing.
           </p>
           <p>
-            Features like <em>voice-to-text EMR</em> reduce documentation
-            burdens, while intelligent assistants provide actionable insights,
-            enabling doctors to focus more on patient care and less on admin
-            work.
+            With compliance frameworks like HIPAA and GDPR in mind, our platform
+            enables healthcare providers to safeguard patient information while
+            maintaining seamless access for authorized stakeholders.
           </p>
         </motion.div>
 
         {/* Back Button */}
         <div className="mt-8">
-          <Link href="/services/doctor_enablemen">
+          <Link href="/services">
             <button className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
               ← Back to Services
             </button>

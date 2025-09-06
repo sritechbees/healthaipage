@@ -2,11 +2,12 @@
 
 import Benefits from '@/common/benefits';
 import HealthAIFAQ from '@/common/faq';
-import TeamSection from '@/common/meetourteam';
 import Services from '@/common/services';
+import ServicesSection from '@/common/servicesample';
 import App_layout from '@/layout/app-alyout';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const services = [
   {
@@ -35,7 +36,7 @@ const services = [
     image: '/home/services1.jpg',
   },
   {
-    title: 'Data Privacy & Security',
+    title: 'Data Privacy Security',
     description: 'Build trust and compliance using Blockchain and consent layers.',
     image: '/home/services1.jpg',
   },
@@ -44,8 +45,7 @@ const services = [
 export default function ServicesCard() {
   return (
     <App_layout>
-      <Services/>
-      <Benefits/>
+     
       <section className="bg-gradient-to-r from-gray-100 to-gray-200 py-16 mt-12">
         <div className="max-w-7xl mx-auto text-center mb-12 px-4">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
@@ -88,10 +88,14 @@ export default function ServicesCard() {
                 </h3>
                 <p className="text-gray-200 text-sm text-center mb-4">
                   {service.description}
+                  
                 </p>
-                <button className="mt-2 px-4 py-2 text-sm text-white bg-blue-500 rounded-full hover:bg-blue-600 transition duration-300">
-                  View Service
-                </button>
+               <Link href={`/services/${service.title.toLowerCase().replace(/\s+/g, '_')}`}>
+  <button className="mt-2 px-4 py-2 text-sm text-white bg-blue-500 rounded-full hover:bg-blue-600 transition duration-300">
+    View Service
+  </button>
+</Link>
+
               </div>
 
               {/* Top Reveal Ribbon */}
@@ -100,7 +104,8 @@ export default function ServicesCard() {
           ))}
         </div>
       </section>
-      <TeamSection/>
+      <Services/>
+      <Benefits/>
       <HealthAIFAQ/>
       
      
