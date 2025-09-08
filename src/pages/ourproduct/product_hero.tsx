@@ -80,7 +80,14 @@ export default function ProductHeroModern() {
           >
             Explore Smart ECG
           </Link>
+           <Link
+            href="/ourproduct/ai_triage/triagehero"
+            className="px-8 py-4 bg-blue-500 text-black rounded-full font-semibold shadow-lg hover:bg-blue-400 transition"
+          >
+          Explore AI Triage
+          </Link>
         </motion.div>
+        
       </motion.div>
     </section>
   );

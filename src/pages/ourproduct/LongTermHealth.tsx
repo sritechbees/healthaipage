@@ -1,55 +1,86 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaHeartbeat } from 'react-icons/fa';
+import Image from 'next/image';
+import EmpoweringPatientsDoctors from './EmpoweringPatientsDoctors';
 
-export default function LongTermHealth() {
+export default function BetterOutcomes() {
   return (
-    <section className="py-12 px-6 bg-gradient-to-br from-green-50 via-white to-green-100">
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="relative w-full min-h-screen text-white overflow-hidden">
+      {/* 🔵 Animated Background Image */}
+      <motion.div
+        initial={{ scale: 1.2, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.5, ease: 'easeOut' }}
+        className="absolute inset-0 -z-10"
+      >
+        <Image
+          src="/product/Better Long-Term Health Outcomes.jpg" // 🔄 replace with your image
+          alt="Long Term Health"
+          fill
+          className="object-cover opacity-70"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-gray-900/50" />
+      </motion.div>
+
+      {/* Content */}
+      <div className="max-w-6xl mx-auto px-6 py-24 lg:py-32 text-center">
         {/* Title */}
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-3xl font-bold text-gray-800"
+          className="text-4xl lg:text-6xl font-extrabold mb-6"
         >
           Better Long-Term Health Outcomes
         </motion.h2>
 
         {/* Description */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="mt-4 text-gray-600 max-w-2xl mx-auto"
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-lg text-gray-300 max-w-3xl mx-auto mb-16"
         >
-          Reduce risks of complications by maintaining stable glucose patterns.
+          Achieving lasting wellness through{" "}
+          <span className="text-yellow-400 font-semibold">preventive care</span>,{" "}
+          <span className="text-yellow-400 font-semibold">continuous monitoring</span>, 
+          and{" "}
+          <span className="text-yellow-400 font-semibold">AI-driven insights</span>.  
+          Our goal is to reduce risks, build resilience, and improve quality of life for every patient.
         </motion.p>
 
-        {/* Card */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mt-8 flex justify-center"
-        >
-          <div className="bg-white shadow-lg rounded-2xl p-8 w-full sm:w-96 border border-green-100 hover:shadow-xl transition-shadow duration-300">
-            <div className="flex items-center justify-center w-16 h-16 mx-auto bg-green-100 text-green-600 rounded-full">
-              <FaHeartbeat className="text-3xl" />
-            </div>
-            <h3 className="mt-4 text-xl font-semibold text-gray-800">
-              Stable Glucose, Better Health
-            </h3>
-            <p className="mt-2 text-gray-600 text-sm">
-              Continuous glucose monitoring helps you keep levels steady, lowering the risk of future health issues and supporting a longer, healthier life.
-            </p>
-          </div>
-        </motion.div>
+        {/* Related Images Row */}
+        <div className="flex flex-wrap justify-center gap-6">
+          {[
+            { img: '/product/Preventive Care.jpg', alt: 'Preventive Care' },
+            { img: '/product/Remote Monitoring.jpg', alt: 'Remote Monitoring' },
+            { img: '/product/AI in Healthcare.jpg', alt: 'AI in Healthcare' },
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
+              className="relative w-64 h-40 rounded-xl overflow-hidden shadow-lg"
+            >
+              <Image
+                src={item.img}
+                alt={item.alt}
+                fill
+                className="object-cover hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center text-white font-semibold opacity-0 hover:opacity-100 transition">
+                {item.alt}
+              </div>
+            </motion.div>
+          ))}
+          
+        </div>
+        
       </div>
+     
     </section>
   );
 }
