@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { FaHeartbeat, FaRobot, FaUserMd } from 'react-icons/fa';
 import { useRef } from 'react';
 import App_layout from '@/layout/app-alyout';
+import Link from 'next/link';
 
 export default function TriageHero() {
   const ref = useRef(null);
@@ -83,7 +84,8 @@ export default function TriageHero() {
               <FaRobot className="text-2xl" /> AI Precision
             </motion.div>
           </div>
-
+<div>
+    <Link href="/ourproduct/ai_triage/aipatientexperience">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -91,6 +93,8 @@ export default function TriageHero() {
           >
             Explore More
           </motion.button>
+          </Link>
+          </div>
         </motion.div>
       </div>
     </section>
