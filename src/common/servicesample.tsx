@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import {
@@ -9,8 +11,18 @@ import {
   FaLock,
 } from 'react-icons/fa';
 
+// ✅ Type for each service item
+interface Service {
+  id: string;
+  title: string;
+  subtitle: string;
+  icon: React.ReactNode;
+  bullets: string[];
+  accent: string;
+}
+
 export default function ServicesSection() {
-  const services = [
+  const services: Service[] = [
     {
       id: 'patient-experience',
       title: 'Patient Experience',
@@ -85,6 +97,7 @@ export default function ServicesSection() {
     },
   ];
 
+  // ✅ Animation container
   const container: Variants = {
     hidden: {},
     show: {
@@ -94,9 +107,14 @@ export default function ServicesSection() {
     },
   };
 
+  // ✅ Animation for each card
   const card: Variants = {
     hidden: { opacity: 0, y: 18 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as any } },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: 'easeOut' }, // 🔥 removed "as any"
+    },
   };
 
   return (
@@ -105,8 +123,12 @@ export default function ServicesSection() {
       className="py-12 md:py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
         <div className="text-center mb-10 md:mb-14">
-          <h2 id="services-heading" className="text-3xl md:text-4xl font-extrabold tracking-tight font-poppins">
+          <h2
+            id="services-heading"
+            className="text-3xl md:text-4xl font-extrabold tracking-tight font-poppins"
+          >
             Our Services
           </h2>
           <p className="mt-3 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -114,6 +136,7 @@ export default function ServicesSection() {
           </p>
         </div>
 
+        {/* Service Grid */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -126,8 +149,13 @@ export default function ServicesSection() {
               variants={card}
               className="group relative rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-900 border border-transparent dark:border-gray-700"
             >
-              <div className={`absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transform-gpu transition-opacity duration-500 bg-gradient-to-br ${s.accent} blur-xl`} aria-hidden="true"></div>
+              {/* Hover Glow */}
+              <div
+                className={`absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transform-gpu transition-opacity duration-500 bg-gradient-to-br ${s.accent} blur-xl`}
+                aria-hidden="true"
+              ></div>
 
+              {/* Icon + Title */}
               <div className="relative z-10 flex items-start space-x-4">
                 <div className="flex-none bg-white dark:bg-gray-800 rounded-lg p-3 ring-1 ring-gray-100 dark:ring-gray-700">
                   <div className="text-yellow-500 dark:text-yellow-400">{s.icon}</div>
@@ -140,10 +168,16 @@ export default function ServicesSection() {
                 </div>
               </div>
 
+              {/* Bullet Points */}
               <ul className="mt-6 space-y-2 relative z-10 text-sm text-gray-700 dark:text-gray-300">
                 {s.bullets.map((b, i) => (
                   <li key={i} className="flex items-start space-x-3">
-                    <svg className="flex-shrink-0 h-4 w-4 mt-1" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true">
+                    <svg
+                      className="flex-shrink-0 h-4 w-4 mt-1"
+                      viewBox="0 0 8 8"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
                       <circle cx="4" cy="4" r="4" />
                     </svg>
                     <span>{b}</span>
@@ -151,14 +185,25 @@ export default function ServicesSection() {
                 ))}
               </ul>
 
+              {/* Learn More Link */}
               <div className="mt-6 relative z-10">
                 <a
                   href={`#contact`}
                   className="inline-flex items-center text-sm font-medium text-gray-900 dark:text-gray-100 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500"
                 >
                   Learn more
-                  <svg className="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg
+                    className="ml-2 h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      d="M5 12h14M12 5l7 7-7 7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </a>
               </div>
@@ -166,9 +211,11 @@ export default function ServicesSection() {
           ))}
         </motion.div>
 
+        {/* Footer Note */}
         <div className="mt-10 text-center">
           <p className="text-sm text-gray-600 dark:text-gray-300">
-            Want this section customised (different colors, icon set, or condensed layout)? Tell me what you'd like and I’ll update it.
+            Want this section customised (different colors, icon set, or condensed layout)? Tell me
+            what you&apos;d like and I&apos;ll update it.
           </p>
         </div>
       </div>

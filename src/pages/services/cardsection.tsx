@@ -3,7 +3,6 @@
 import Benefits from '@/common/benefits';
 import HealthAIFAQ from '@/common/faq';
 import Services from '@/common/services';
-import ServicesSection from '@/common/servicesample';
 import App_layout from '@/layout/app-alyout';
 import { motion } from 'framer-motion';
 import Image from 'next/image';

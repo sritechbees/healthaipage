@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import EmpoweringPatientsDoctors from './EmpoweringPatientsDoctors';
 
 export default function BetterOutcomes() {
   return (

@@ -179,7 +179,7 @@ export default function AdvancedDiagnosticsPage() {
           <div>
             <h3 className="text-2xl font-bold">Ready to upgrade diagnostics?</h3>
             <p className="mt-2 text-gray-300 max-w-xl">
-              Tell us about your modality mix and workflow—we'll propose a focused
+              Tell us about your modality mix and workflow we`&apos;ll propose a focused
               pilot with measurable KPIs.
             </p>
           </div>
