@@ -8,6 +8,7 @@ import { useState } from 'react';
 import HeroSection from './herosection';
 import KeyFeatures from './keyfeatures';
 import WhatWeDo from './whatwedo';
+import HealthAIFAQ from '@/common/faq';
 
 const sections = [
    {
@@ -135,8 +136,9 @@ export default function AboutUs() {
         ))}
       </div>
     </section>
-
+      <HealthAIFAQ/>
       <KeyFeatures/>
+     
       <WhatWeDo/>
     </App_layout>
   );

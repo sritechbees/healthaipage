@@ -12,6 +12,7 @@ import CloudECGData from './cloudecgdata';
 import ECGPreventiveHealthcare from './ecgpreventivehealthcare';
 import AdvancedECGPersonalizedTreatment from './advancedecgpersonalizedtreatment';
 import CollaborationHospitalsClinics from './collaborationhospitalsclinics';
+import Benefits from '@/common/benefits';
 
 export default function EarlyDetectionECG() {
   return (
@@ -68,6 +69,7 @@ export default function EarlyDetectionECG() {
     <ECGPreventiveHealthcare/>
     <AdvancedECGPersonalizedTreatment/>
     <CollaborationHospitalsClinics/>
+    <Benefits/>
     </App_layout>
   );
 }

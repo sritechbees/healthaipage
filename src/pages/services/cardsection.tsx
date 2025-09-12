@@ -1,8 +1,6 @@
 'use client';
 
-import Benefits from '@/common/benefits';
-import HealthAIFAQ from '@/common/faq';
-import Services from '@/common/services';
+
 import App_layout from '@/layout/app-alyout';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -12,32 +10,32 @@ const services = [
   {
     title: 'Patient Experience',
     description: 'Improve access and affordability.',
-    image: '/home/services1.jpg',
+    image: '/services/services1.jpg',
   },
   {
     title: 'Advanced Diagnostics',
     description: 'Enhance precision and speed by analyzing data using AI.',
-    image: '/home/services1.jpg',
+    image: '/services/Advanced Diagnostics.jpg',
   },
   {
     title: 'Digital Health Records',
     description: 'Enable secure data sharing to doctors and hospitals.',
-    image: '/home/services1.jpg',
+    image: '/services/Digital Health Records.jpg',
   },
   {
     title: 'Remote Monitoring',
     description: 'Extend care beyond hospital walls using medical devices and IoT.',
-    image: '/home/services1.jpg',
+    image: '/services/Remote Monitoring.jpg',
   },
   {
     title: 'Doctor Enablement',
     description: 'Streamline clinical workflows with AI assistants and voice-to-text EMR.',
-    image: '/home/services1.jpg',
+    image: '/services/Doctor Enablement.jpg',
   },
   {
     title: 'Data Privacy Security',
     description: 'Build trust and compliance using Blockchain and consent layers.',
-    image: '/home/services1.jpg',
+    image: '/services/Data Privacy Security.jpg',
   },
 ];
 
@@ -103,10 +101,7 @@ export default function ServicesCard() {
           ))}
         </div>
       </section>
-      <Services/>
-      <Benefits/>
-      <HealthAIFAQ/>
-      
+     
      
     </App_layout>
   );

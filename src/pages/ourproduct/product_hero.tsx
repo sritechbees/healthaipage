@@ -1,10 +1,12 @@
 'use client';
 
+import App_layout from '@/layout/app-alyout';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export default function ProductHeroModern() {
   return (
+    <App_layout>
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center text-white">
       {/* Background Video */}
       <video
@@ -90,5 +92,6 @@ export default function ProductHeroModern() {
         
       </motion.div>
     </section>
+    </App_layout>
   );
 }

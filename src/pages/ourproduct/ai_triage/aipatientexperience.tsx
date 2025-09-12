@@ -12,6 +12,8 @@ import ClinicalEfficiency from './clinicalefficiency';
 import ScalableDigitalHealth from './scalabledigitalhealth';
 import DataSecurityCompliance from './datasecuritycompliance';
 import SmartEscalationSystems from './smartescalationsystems';
+import { Bean } from 'lucide-react';
+import Benefits from '@/common/benefits';
 
 export default function AIPatientExperience() {
   useEffect(() => {
@@ -69,6 +71,7 @@ export default function AIPatientExperience() {
     <SmartEscalationSystems/>
     <DataSecurityCompliance/>
     <ScalableDigitalHealth/>
+    <Benefits/>
     </App_layout>
   );
 }

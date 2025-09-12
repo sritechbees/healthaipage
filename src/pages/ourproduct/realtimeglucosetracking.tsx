@@ -14,6 +14,15 @@ import Image from 'next/image';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import WhyChooseTrackyCGM from './whychoosecgm';
+import TransmitterSensor from './trasmitterand_sensor';
+import HowToUseCGM from './howtousecgm';
+import TrackySteps from './howtoconnectcgm';
+import AppFeatures from './feactureofapp';
+import CGMComparison from './cgmcomparison';
+import CGMWelcomeKit from './cgmwelcomekit';
+import Benefits from '@/common/benefits';
+import CGMHeroSection from './cgmherosection';
 
 export default function RealTimeGlucoseTracking() {
   useEffect(() => {
@@ -22,8 +31,9 @@ export default function RealTimeGlucoseTracking() {
 
   return (
     <App_layout>
-      {/* Hero Section */}
-      <section className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] mt-16 overflow-hidden">
+      <CGMHeroSection/>
+     
+      <section className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
         {/* Background image */}
         <Image
           src="/cgm/glucose1.jpg"
@@ -67,6 +77,7 @@ export default function RealTimeGlucoseTracking() {
       <IntegrationWithDietFitnessApps />
       <LongTermHealth />
       <EmpoweringPatientsDoctors />
+      <Benefits/>
     </App_layout>
   );
 }
