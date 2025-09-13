@@ -48,82 +48,87 @@ export default function PatientExperiencePage3() {
 
   return (
     <App_layout>
-    <div className="w-full">
-      {/* Hero Section */}
-      <section className="relative w-full h-[650px] flex items-center justify-center overflow-hidden">
-        <Image
-          src="/services/Patient Experience1.jpg"
-          alt="Patient Experience Hero"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-center px-6">
-          <motion.h1
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
-          >
-            Patient Experience
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 1 }}
-            className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-6"
-          >
-            Redefining healthcare journeys with simplicity, affordability, and accessibility.
-          </motion.p>
-          <motion.a
-            href="#features"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block px-6 py-3 bg-blue-400 text-black font-semibold rounded-full shadow-lg hover:bg-yellow-300 transition"
-          >
-            Explore Features
-          </motion.a>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section
-        id="features"
-        className="relative w-full py-20 bg-gradient-to-br from-yellow-50 via-white to-emerald-50"
-      >
-        <div className="max-w-6xl mx-auto px-6">
-          {features.map((feature, idx) => (
-            <div
-              key={idx}
-              className={`flex flex-col md:flex-row items-center gap-10 mb-20 ${
-                idx % 2 === 1 ? 'md:flex-row-reverse' : ''
-              }`}
-              data-aos="fade-up"
+      {/* OUTER WRAPPER - hides overflow on all devices */}
+      <div className="w-full overflow-x-hidden">
+        {/* Hero Section */}
+        <section className="relative w-full min-h-[650px] flex items-center justify-center overflow-hidden">
+          <Image
+            src="/services/Patient Experience1.jpg"
+            alt="Patient Experience Hero"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="relative z-10 text-center px-6">
+            <motion.h1
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="text-3xl md:text-6xl font-bold text-white mb-6"
             >
-              {/* Image */}
-              <div className="w-full md:w-1/2">
-                <Image
-                  src={feature.image}
-                  alt={feature.title}
-                  width={600}
-                  height={400}
-                  className="rounded-2xl shadow-lg"
-                />
-              </div>
+              Patient Experience
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 1 }}
+              className="text-base md:text-xl text-gray-200 max-w-2xl mx-auto mb-6"
+            >
+              Redefining healthcare journeys with simplicity, affordability, and accessibility.
+            </motion.p>
+            <motion.a
+              href="#features"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block px-6 py-3 bg-blue-400 text-black font-semibold rounded-full shadow-lg hover:bg-yellow-300 transition"
+            >
+              Explore Features
+            </motion.a>
+          </div>
+        </section>
 
-              {/* Text */}
-              <div className="w-full md:w-1/2">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                  {feature.title}
-                </h2>
-                <p className="text-gray-600 text-lg">{feature.desc}</p>
+        {/* Features Section */}
+        <section
+          id="features"
+          className="relative w-full py-20 bg-gradient-to-br from-yellow-50 via-white to-emerald-50"
+        >
+          <div className="max-w-6xl mx-auto px-6">
+            {features.map((feature, idx) => (
+              <div
+                key={idx}
+                className={`flex flex-col md:flex-row items-center gap-10 mb-20 ${
+                  idx % 2 === 1 ? 'md:flex-row-reverse' : ''
+                }`}
+                data-aos="fade-up"
+              >
+                {/* Image */}
+                <div className="w-full md:w-1/2 overflow-hidden rounded-2xl">
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    width={600}
+                    height={400}
+                    className="rounded-2xl shadow-lg object-cover w-full h-auto"
+                  />
+                </div>
+
+                {/* Text */}
+                <div className="w-full md:w-1/2">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                    {feature.title}
+                  </h2>
+                  <p className="text-gray-600 text-base md:text-lg">
+                    {feature.desc}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
-    <Benefits/>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <Benefits />
     </App_layout>
   );
 }
