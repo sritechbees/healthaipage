@@ -14,13 +14,6 @@ import Image from 'next/image';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import WhyChooseTrackyCGM from './whychoosecgm';
-import TransmitterSensor from './trasmitterand_sensor';
-import HowToUseCGM from './howtousecgm';
-import TrackySteps from './howtoconnectcgm';
-import AppFeatures from './feactureofapp';
-import CGMComparison from './cgmcomparison';
-import CGMWelcomeKit from './cgmwelcomekit';
 import Benefits from '@/common/benefits';
 import CGMHeroSection from './cgmherosection';
 

@@ -1,5 +1,6 @@
 'use client';
 
+import HealthcareProductHero from '@/common/healthcareproducthero';
 import App_layout from '@/layout/app-alyout';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -7,6 +8,7 @@ import Link from 'next/link';
 export default function ProductHeroModern() {
   return (
     <App_layout>
+      <HealthcareProductHero/>
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center text-white">
       {/* Background Video */}
       <video

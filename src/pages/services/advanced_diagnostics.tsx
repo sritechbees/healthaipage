@@ -1,222 +1,180 @@
-"use client";
+'use client';
 
-import React, { useEffect } from "react";
-import { motion } from "framer-motion";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import Image from "next/image";
-import {
-  FaMicroscope,
-  FaBrain,
-  FaChartLine,
-  FaShieldAlt,
-  FaCloudUploadAlt,
-  FaRobot,
-  FaDatabase,
-} from "react-icons/fa";
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import App_layout from '@/layout/app-alyout';
+import Benefits from '@/common/benefits';
 
 export default function AdvancedDiagnosticsPage() {
   useEffect(() => {
-    AOS.init({ duration: 900, once: true, easing: "ease-out-cubic" });
+    AOS.init({ duration: 1000, once: true });
   }, []);
 
-  const services = [
+  const features = [
     {
-      title: "AI-Assisted Imaging",
-      desc: "Detect anomalies in X-ray, CT, and MRI with model-aided triage and scoring.",
-      icon: <FaMicroscope className="text-3xl" />,
+      title: 'AI-Powered Imaging',
+      desc: 'Automated analysis of X-rays, CT scans, and MRIs improves accuracy and reduces turnaround time.',
+      image: '/services/AI-Powered Imaging.jpg',
     },
     {
-      title: "Predictive Analytics",
-      desc: "Risk stratification and outcome prediction from multi-modal clinical data.",
-      icon: <FaChartLine className="text-3xl" />,
+      title: 'Predictive Analytics',
+      desc: 'Machine learning models forecast disease risks early, enabling preventive care strategies.',
+      image: '/services/Predictive Analytics.jpg',
     },
     {
-      title: "Decision Support",
-      desc: "Explainable suggestions embedded inside your workflow and PACS/EHR.",
-      icon: <FaBrain className="text-3xl" />,
+      title: 'Genomic Insights',
+      desc: 'AI-driven genomic sequencing helps tailor personalized treatment plans for patients.',
+      image: '/services/Genomic Insights.jpg',
     },
     {
-      title: "Data Privacy & Security",
-      desc: "De-identification, role-based access, and audit trails for compliance.",
-      icon: <FaShieldAlt className="text-3xl" />,
+      title: 'Faster Lab Results',
+      desc: 'Automated lab data interpretation ensures quicker reporting and reliable outcomes.',
+      image: '/services/Faster Lab Results.jpg',
     },
     {
-      title: "Cloud & Edge Ready",
-      desc: "Deploy in hospital data centers or on secure cloud with edge accelerators.",
-      icon: <FaCloudUploadAlt className="text-3xl" />,
+      title: 'Decision Support Systems',
+      desc: 'Clinical AI assistants provide real-time diagnostic suggestions for doctors.',
+      image: '/services/Decision Support Systems.jpg',
     },
     {
-      title: "Automation & Robotics",
-      desc: "Leverage AI-driven automation for repetitive workflows and robotic-assisted diagnostics.",
-      icon: <FaRobot className="text-3xl" />,
-    },
-    {
-      title: "Data Integration",
-      desc: "Seamlessly connect EHR, LIS, PACS, and IoT devices into a unified diagnostic pipeline.",
-      icon: <FaDatabase className="text-3xl" />,
+      title: 'Continuous Learning',
+      desc: 'AI models improve over time with new datasets, ensuring evolving precision and performance.',
+      image: '/services/Continuous Learning.jpg',
     },
   ];
 
   return (
-    <main className="min-h-screen font-poppins text-gray-800">
-      {/* HERO */}
-      <section className="relative w-full h-[90vh] flex items-center">
+    <App_layout>
+    <div className="w-full">
+      {/* Hero Section */}
+      <section className="relative w-full h-[650px] flex  items-center justify-center overflow-hidden">
         <Image
-          src="/hero/advanced-diagnostics-hero.jpg"
-          alt="Advanced Diagnostics"
+          src="/services/Advanced Diagnostics1.jpg"
+          alt="Advanced Diagnostics Hero"
           fill
-          priority
-          style={{ objectFit: "cover" }}
-          className="-z-10"
+          className="object-cover mt-24"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent -z-10" />
-
-        <div className="container mx-auto px-6 lg:px-20">
-          <div className="max-w-3xl text-white">
-            <motion.p
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-block px-3 py-1 rounded-full bg-yellow-400 text-sm font-semibold text-gray-900"
-            >
-              Advanced Diagnostics
-            </motion.p>
-
-            <motion.h1
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-4 text-4xl lg:text-6xl font-extrabold leading-tight drop-shadow"
-            >
-              AI-powered precision to transform healthcare outcomes.
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-6 text-lg text-gray-100 max-w-xl"
-            >
-              From AI-assisted imaging to predictive analytics, we integrate
-              explainable, privacy-first tools that elevate diagnostic accuracy
-              and reduce turnaround time.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-8 flex flex-wrap gap-4"
-            >
-              <a
-                href="#services"
-                className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium shadow hover:opacity-90"
-              >
-                Explore Services
-              </a>
-              <a
-                href="#contact"
-                className="border border-white/40 bg-white/10 backdrop-blur-md text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20"
-              >
-                Talk to us
-              </a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section id="services" className="container mx-auto px-6 lg:px-20 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold">Our Core Services</h2>
-          <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
-            Seven advanced capabilities designed to accelerate diagnostics and
-            improve clinical outcomes.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((s, idx) => (
-            <div
-              key={s.title}
-              data-aos="fade-up"
-              data-aos-delay={idx * 100}
-              className="bg-white rounded-2xl p-6 shadow-md border hover:shadow-lg transition"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center text-yellow-600">
-                  {s.icon}
-                </div>
-                <h3 className="text-lg font-semibold">{s.title}</h3>
-              </div>
-              <p className="mt-3 text-gray-600">{s.desc}</p>
-              <a
-                href="#contact"
-                className="mt-4 inline-block text-sm font-medium text-yellow-600"
-              >
-                Learn more →
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* PROCESS STRIP */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-6 lg:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {["Ingest", "Analyze", "Decide"].map((step, i) => (
-              <div
-                key={step}
-                data-aos="zoom-in-up"
-                data-aos-delay={i * 150}
-                className="p-6 bg-white rounded-2xl border shadow-md"
-              >
-                <div className="text-sm text-gray-500">Step {i + 1}</div>
-                <div className="text-xl font-semibold mt-1">{step}</div>
-                <p className="mt-2 text-gray-600">
-                  {i === 0 &&
-                    "Connect EHR/PACS/LIS, de-identify, and validate data quality."}
-                  {i === 1 &&
-                    "Apply models for detection, segmentation, and risk scoring."}
-                  {i === 2 &&
-                    "Deliver explainable insights inside existing workflows."}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section
-        id="contact"
-        className="bg-gray-900 text-white py-16 text-center md:text-left"
-      >
-        <div className="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
-            <h3 className="text-3xl font-bold">
-              Ready to upgrade diagnostics?
-            </h3>
-            <p className="mt-3 text-gray-300 max-w-xl">
-              Tell us about your modality mix and workflow—we&apos;ll propose a
-              focused pilot with measurable KPIs.
-            </p>
-          </div>
-          <a
-            href="mailto:hello@yourorg.com"
-            className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold shadow hover:opacity-90"
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40" />
+        <div className="relative z-10 mt-24 text-center px-6">
+          <motion.h1
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
           >
-            Contact Us
-          </a>
+            Advanced Diagnostics
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 1 }}
+            className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-6"
+          >
+            Enhance precision and speed by analyzing medical data using AI-powered tools.
+          </motion.p>
+          <motion.a
+            href="#features"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block px-6 py-3 bg-yellow-400 text-black font-semibold rounded-full shadow-lg hover:bg-yellow-300 transition"
+          >
+            Discover More
+          </motion.a>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="text-center text-sm text-gray-500 py-8">
-        © {new Date().getFullYear()} Your Organization — Advanced Diagnostics
-      </footer>
-    </main>
+      {/* Features */}
+      <section id="features" className="relative w-full">
+        {features.map((f, idx) => (
+          <div key={idx} className="w-full py-20 px-6">
+            {/* Layout 1: Full-width image left, text right */}
+            {idx === 0 && (
+              <div
+                className="flex flex-col md:flex-row items-center gap-10"
+                data-aos="fade-right"
+              >
+                <div className="w-full md:w-1/2">
+                  <Image src={f.image} alt={f.title} width={700} height={500} className="rounded-xl shadow-lg" />
+                </div>
+                <div className="w-full md:w-1/2">
+                  <h2 className="text-3xl font-bold mb-4 text-gray-800">{f.title}</h2>
+                  <p className="text-lg text-gray-600 mb-6">{f.desc}</p>
+                  <a href="#" className="px-5 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-500">Learn More</a>
+                </div>
+              </div>
+            )}
+
+            {/* Layout 2: Image right, text left */}
+            {idx === 1 && (
+              <div
+                className="flex flex-col md:flex-row-reverse items-center gap-10"
+                data-aos="fade-left"
+              >
+                <div className="w-full md:w-1/2">
+                  <Image src={f.image} alt={f.title} width={700} height={500} className="rounded-xl shadow-lg" />
+                </div>
+                <div className="w-full md:w-1/2">
+                  <h2 className="text-3xl font-bold mb-4 text-gray-800">{f.title}</h2>
+                  <p className="text-lg text-gray-600 mb-6">{f.desc}</p>
+                  <a href="#" className="px-5 py-2 bg-green-600 text-white rounded-full shadow hover:bg-green-500">Explore</a>
+                </div>
+              </div>
+            )}
+
+            {/* Layout 3: Centered text above, image below */}
+            {idx === 2 && (
+              <div className="text-center" data-aos="fade-up">
+                <h2 className="text-3xl font-bold mb-4 text-gray-800">{f.title}</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">{f.desc}</p>
+                <Image src={f.image} alt={f.title} width={800} height={500} className="rounded-xl shadow-lg mx-auto" />
+                <a href="#" className="mt-6 inline-block px-6 py-2 bg-purple-600 text-white rounded-full shadow hover:bg-purple-500">Read More</a>
+              </div>
+            )}
+
+            {/* Layout 4: Image full-width background with overlay text */}
+            {idx === 3 && (
+              <div className="relative h-[500px] flex items-center justify-center" data-aos="zoom-in">
+                <Image src={f.image} alt={f.title} fill className="object-cover rounded-xl" />
+                <div className="absolute inset-0 bg-black/50 rounded-xl" />
+                <div className="relative z-10 text-center text-white max-w-2xl px-6">
+                  <h2 className="text-3xl font-bold mb-4">{f.title}</h2>
+                  <p className="text-lg mb-6">{f.desc}</p>
+                  <a href="#" className="px-6 py-2 bg-yellow-400 text-black font-semibold rounded-full shadow hover:bg-yellow-300">Discover</a>
+                </div>
+              </div>
+            )}
+
+            {/* Layout 5: Split screen with diagonal */}
+            {idx === 4 && (
+              <div className="relative flex flex-col md:flex-row items-stretch" data-aos="fade-up-right">
+                <div className="w-full md:w-1/2 bg-gradient-to-br from-blue-50 to-blue-100 flex flex-col justify-center p-10">
+                  <h2 className="text-3xl font-bold mb-4 text-gray-800">{f.title}</h2>
+                  <p className="text-lg text-gray-600 mb-6">{f.desc}</p>
+                  <a href="#" className="px-6 py-2 bg-red-600 text-white rounded-full shadow hover:bg-red-500">Start Now</a>
+                </div>
+                <div className="w-full md:w-1/2">
+                  <Image src={f.image} alt={f.title} width={700} height={500} className="h-full object-cover" />
+                </div>
+              </div>
+            )}
+
+            {/* Layout 6: Minimal text with large scroll-triggered image */}
+            {idx === 5 && (
+              <div className="text-center" data-aos="fade-up">
+                <h2 className="text-3xl font-bold mb-4 text-gray-800">{f.title}</h2>
+                <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">{f.desc}</p>
+                <Image src={f.image} alt={f.title} width={1000} height={600} className="rounded-xl shadow-lg mx-auto" />
+                <a href="#" className="mt-6 inline-block px-6 py-2 bg-indigo-600 text-white rounded-full shadow hover:bg-indigo-500">Learn More</a>
+              </div>
+            )}
+          </div>
+        ))}
+      </section>
+    </div>
+    <Benefits/>
+    </App_layout>
   );
 }

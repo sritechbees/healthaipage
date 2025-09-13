@@ -1,232 +1,150 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Image from "next/image";
-import {
-  FaLock,
-  FaHospitalUser,
-  FaCloudUploadAlt,
-  FaShieldAlt,
-  FaFileMedical,
-} from "react-icons/fa";
+import { motion } from "framer-motion";
 import App_layout from "@/layout/app-alyout";
 
-// DigitalHealthRecordsPage.jsx
-// Next.js + Tailwind + Framer Motion page component
-
 export default function DigitalHealthRecordsPage() {
-  const featureList = [
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
+  const features = [
     {
-      title: "Secure Data Sharing",
-      desc: "Enable encrypted medical record sharing between doctors and hospitals.",
-      icon: <FaLock className="text-3xl" />,
+      title: "Secure Access",
+      desc: "Every patient record is protected with end-to-end encryption, ensuring safe access for only authorized doctors and hospitals.",
+      img: "/services/Secure Access.jpg",
+      style: "bg-gradient-to-r from-blue-50 to-white",
+      aos: "fade-up",
     },
     {
-      title: "Patient-Centric Access",
-      desc: "Give patients control over who can access their records anytime.",
-      icon: <FaHospitalUser className="text-3xl" />,
+      title: "Seamless Sharing",
+      desc: "Enable smooth transfer of health data between patients, doctors, and hospitals across multiple devices.",
+      img: "/services/Seamless Sharing.jpg",
+      style: "bg-gray-900 text-white",
+      aos: "fade-left",
     },
     {
-      title: "Cloud Storage",
-      desc: "Reliable, scalable cloud infrastructure for storing health data.",
-      icon: <FaCloudUploadAlt className="text-3xl" />,
+      title: "AI-Powered Insights",
+      desc: "Use AI to scan records, detect anomalies, and assist doctors with predictive analysis for faster decision-making.",
+      img: "/services/AI-Powered Insights.jpg",
+      style: "relative bg-fixed bg-cover bg-center text-white",
+      overlay: true,
+      aos: "fade-right",
     },
     {
-      title: "Compliance & Security",
-      desc: "HIPAA/GDPR compliant architecture with strict privacy controls.",
-      icon: <FaShieldAlt className="text-3xl" />,
+      title: "Multi-Device Sync",
+      desc: "Access health records anytime, anywhere—mobile, tablet, or desktop—with secure synchronization.",
+      img: "/services/Patient Experience.jpg",
+      style: "bg-gradient-to-br from-cyan-50 via-white to-cyan-100",
+      aos: "zoom-in",
     },
     {
-      title: "Unified Health Records",
-      desc: "Aggregate data across labs, clinics, and hospitals into one record.",
-      icon: <FaFileMedical className="text-3xl" />,
+      title: "Patient Empowerment",
+      desc: "Give patients full control over their health data with transparent consent layers and easy access options.",
+      img: "/services/Patient Empowerment.jpg",
+      style: "bg-gradient-to-r from-purple-50 to-white",
+      aos: "fade-up-right",
+    },
+    {
+      title: "Compliance Ready",
+      desc: "Aligned with HIPAA and global standards, ensuring legal and regulatory compliance in every interaction.",
+      img: "/services/Compliance Ready.jpg",
+      style: "bg-black text-white",
+      aos: "fade-down",
     },
   ];
 
   return (
     <App_layout>
-      <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 font-poppins text-gray-800">
-        {/* HERO */}
-        <section className="container mx-auto px-6 lg:px-20 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="space-y-6"
-            >
-              <p className="inline-block px-3 py-1 rounded-full bg-yellow-400 text-sm font-semibold text-gray-900 w-max">
-                Digital Health Records
-              </p>
-              <h1 className="text-4xl lg:text-5xl font-extrabold leading-tight">
-                Enable secure data sharing to doctors and hospitals
-              </h1>
+    <div className="font-poppins">
+      {/* Hero Section */}
+      <section className="relative w-full h-[650px] mt-24 flex items-center justify-center text-center text-white">
+        <Image
+          src="/services/DigitalHealthRecords1.jpg"
+          alt="HealthAI Background"
+          fill
+          className="object-cover brightness-50"
+        />
+        <div className="relative z-10 max-w-3xl px-6">
+          <motion.h1
+            initial={{ y: -40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl font-bold mb-4"
+          >
+            Digital Health Records
+          </motion.h1>
+          <p className="text-lg mb-6">
+            Enable secure data sharing to doctors and hospitals, powered by AI-driven insights.
+          </p>
+          <motion.a
+            href="#features"
+            whileHover={{ scale: 1.05 }}
+            className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg shadow-lg font-semibold"
+          >
+            Discover More
+          </motion.a>
+        </div>
+      </section>
 
-              <p className="text-lg text-gray-600 max-w-xl">
-                Our Digital Health Records system ensures seamless, secure, and
-                real-time sharing of patient information, empowering doctors,
-                hospitals, and patients alike.
-              </p>
+      {/* Features */}
+      <section id="features" className="space-y-0">
+        {features.map((item, idx) => (
+          <div
+            key={idx}
+            className={`relative w-full h-[650px] flex items-center ${item.style}`}
+            data-aos={item.aos}
+          >
+            {/* Background Image with optional overlay */}
+            {item.overlay && (
+              <>
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50" />
+              </>
+            )}
 
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 bg-gray-900 text-white px-5 py-3 rounded-lg font-medium shadow-lg hover:opacity-95"
-                >
-                  Get started
-                </a>
-
-                <a
-                  href="#features"
-                  className="inline-flex items-center gap-2 border border-gray-200 px-5 py-3 rounded-lg font-medium hover:bg-gray-100"
-                >
-                  Explore services
-                </a>
-              </div>
-
-              <div className="mt-6 text-sm text-gray-500">
-                <strong>Impact snapshot:</strong> 40% faster record sharing · 25%
-                reduction in duplicate tests.
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="relative w-full h-72 lg:h-96 rounded-2xl overflow-hidden shadow-2xl"
-            >
-              <Image
-                src="/services/Digital Health Records.jpg"
-                alt="Digital Health Records illustration"
-                fill
-                style={{ objectFit: "cover" }}
-                sizes="(min-width:1024px) 50vw, 100vw"
-              />
-            </motion.div>
-          </div>
-        </section>
-
-        {/* FEATURES */}
-        <section id="features" className="container mx-auto px-6 lg:px-20 py-12">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold">Core services we deliver</h2>
-            <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
-              Solutions designed to enhance trust, improve interoperability, and
-              safeguard patient health data across the ecosystem.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featureList.map((f, idx) => (
-              <motion.article
-                key={f.title}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className="bg-white rounded-2xl p-6 shadow-sm border"
+            <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 relative z-10">
+              {/* Text */}
+              <div
+                className={`flex-1 ${
+                  idx % 2 === 0 ? "lg:pr-12" : "lg:pl-12"
+                }`}
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center text-yellow-600">
-                    {f.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold">{f.title}</h3>
-                </div>
-
-                <p className="mt-3 text-gray-600">{f.desc}</p>
-
+                <h2 className="text-4xl font-bold mb-4">{item.title}</h2>
+                <p className="text-lg mb-6">{item.desc}</p>
                 <a
                   href="#"
-                  className="mt-4 inline-block text-sm font-medium text-yellow-600"
+                  className="inline-block px-5 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg shadow-md hover:scale-105 transition"
                 >
-                  Learn more →
+                  Learn More
                 </a>
-              </motion.article>
-            ))}
-          </div>
-        </section>
+              </div>
 
-        {/* DEEP DIVE */}
-        <section className="container mx-auto px-6 lg:px-20 py-12 space-y-12">
-          {featureList.map((f, idx) => (
-            <motion.div
-              key={f.title}
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.06 }}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${
-                idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
-            >
-              <div className="space-y-4">
-                <div className="w-14 h-14 rounded-lg bg-yellow-50 flex items-center justify-center text-yellow-600">
-                  {f.icon}
+              {/* Image (only for non-overlay sections) */}
+              {!item.overlay && (
+                <div className="flex-1 relative w-full h-96">
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill
+                    className="object-cover rounded-2xl shadow-lg"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold">{f.title}</h3>
-                <p className="text-gray-600 max-w-xl">
-                  {f.desc} Our solutions are designed with robust encryption,
-                  user-friendly access controls, and seamless integrations with
-                  hospital systems.
-                </p>
-
-                <ul className="mt-4 space-y-2 text-gray-600 list-disc list-inside">
-                  <li>End-to-end encrypted data exchange</li>
-                  <li>Role-based access for doctors & patients</li>
-                  <li>Cloud-native storage and disaster recovery</li>
-                </ul>
-
-                <a
-                  href="#contact"
-                  className="inline-block mt-4 px-4 py-2 border rounded-lg"
-                >
-                  Request a consultation
-                </a>
-              </div>
-
-              <div className="relative w-full h-56 rounded-xl overflow-hidden shadow">
-                <Image
-                  src={`/features/${f.title
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")}.jpg`}
-                  alt={f.title}
-                  fill
-                  style={{ objectFit: "cover" }}
-                  sizes="(min-width:1024px) 33vw, 100vw"
-                />
-              </div>
-            </motion.div>
-          ))}
-        </section>
-
-        {/* CONTACT */}
-        <section id="contact" className="bg-gray-900 text-white py-12">
-          <div className="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-2xl font-bold">
-                Ready to implement secure health records?
-              </h3>
-              <p className="mt-2 text-gray-300 max-w-xl">
-                Share your requirements with us, and we’ll build a tailored
-                digital records solution for your hospital or practice.
-              </p>
+              )}
             </div>
-
-            <a
-              href="mailto:hello@yourorg.com"
-              className="inline-block bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold shadow"
-            >
-              Contact us
-            </a>
           </div>
-        </section>
-
-        <footer className="text-center text-sm text-gray-500 py-8">
-          © {new Date().getFullYear()} Your Organization — Digital Health Records
-        </footer>
-      </main>
+        ))}
+      </section>
+    </div>
     </App_layout>
   );
 }
