@@ -1,12 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
-import { useCallback } from 'react';
 import App_layout from '@/layout/app-alyout';
 
 import type { Engine } from 'tsparticles-engine';
@@ -61,56 +60,56 @@ export default function CGMWelcomeKit() {
 
   return (
     <App_layout>
-   
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden bg-gradient-to-r from-green-100 via-green-200 to-blue-300 mt-12">
         {/* Particle Background */}
         <Particles
           id="tsparticles"
           init={particlesInit}
           options={{
-            background: { color: { value: '#0a0a0a' } },
+            background: { color: { value: 'transparent' } },
             particles: {
-              number: { value: 70 },
+              number: { value: 60 },
               size: { value: 2 },
-              color: { value: '#ffffff' },
-              links: { enable: true, color: '#ffffff', distance: 120 },
+              color: { value: '#2cb9ff' },
+              links: { enable: true, color: '#2cb9ff', distance: 120 },
               move: { enable: true, speed: 1 },
             },
           }}
           className="absolute inset-0 -z-10"
         />
 
-        <section className="py-20 px-4 md:px-12 relative z-10 text-white">
+        {/* Hero Section */}
+        <section className="py-24 px-6 md:px-12 relative z-10 text-gray-900">
           <div className="max-w-6xl mx-auto text-center">
             <h2
               data-aos="fade-down"
-              className="text-xl md:text-2xl font-semibold"
+              className="text-xl md:text-2xl font-semibold tracking-wide text-gray-700"
             >
-              India’s first ever Bluetooth Connected
+              India’s First Ever Bluetooth Connected
             </h2>
             <h1
               data-aos="zoom-in"
-              className="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-orange-500 via-yellow-400 to-red-500 bg-clip-text text-transparent mt-4"
+              className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-green-500 via-[#2cb9ff] to-teal-600 bg-clip-text text-transparent mt-4"
             >
-              CGM Device is now here!
+              CGM Device is Now Here!
             </h1>
             <p
               data-aos="fade-up"
-              className="mt-6 text-base md:text-lg text-gray-300"
+              className="mt-6 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto"
             >
-              Welcome Kit – What&apos;s inside the box?
+              Discover what’s inside the <span className="font-semibold text-[#2cb9ff]">Welcome Kit</span> and start your journey towards smarter health monitoring.
             </p>
           </div>
 
           {/* Dynamic Sections */}
-          <div className="mt-16 space-y-20">
+          <div className="mt-20 space-y-20">
             {items.map((section, idx) => (
               <div
                 key={idx}
                 data-aos={idx % 2 === 0 ? 'fade-right' : 'fade-left'}
-                className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg p-8"
+                className="bg-white backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl p-10 hover:shadow-2xl transition"
               >
-                <h3 className="text-lg font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent mb-10 border-l-4 border-orange-500 pl-4">
+                <h3 className="text-xl font-bold bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent mb-10 border-l-4 border-[#2cb9ff] pl-4">
                   {section.section}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -120,22 +119,22 @@ export default function CGMWelcomeKit() {
                       data-aos="zoom-in"
                       className="flex flex-col items-center text-center group hover:scale-105 transition duration-300"
                     >
-                      <div className="relative w-40 h-40">
+                      <div className="relative w-44 h-44">
                         <Image
                           src={item.img}
                           alt={item.title}
                           fill
-                          className="object-contain rounded-xl shadow-md group-hover:shadow-orange-500/50"
+                          className="object-contain rounded-xl shadow-lg group-hover:shadow-blue-500/50"
                         />
                       </div>
-                      <h4 className="mt-6 text-xl font-semibold text-blue-400">
+                      <h4 className="mt-6 text-xl font-semibold text-[#2cb9ff]">
                         {item.title}
                       </h4>
-                      <ul className="mt-3 text-sm text-gray-200 space-y-2">
+                      <ul className="mt-3 text-sm text-gray-700 space-y-2">
                         {item.desc.map((line, i) => (
                           <li
                             key={i}
-                            className="hover:text-orange-400 transition"
+                            className="hover:text-green-600 transition"
                           >
                             {line}
                           </li>
@@ -148,14 +147,16 @@ export default function CGMWelcomeKit() {
             ))}
           </div>
         </section>
-<WhyChooseTrackyCGM/>
-<TransmitterSensor/>
-   <HowToUseCGM/>   
-   <TrackySteps/> 
-   <AppFeatures/>
-   <CGMComparison/>
+
+        {/* Extra Sections */}
+        <WhyChooseTrackyCGM />
+        <TransmitterSensor />
+        <HowToUseCGM />
+        <AppFeatures />
+        <TrackySteps />
+        
+        <CGMComparison />
       </div>
-      </App_layout>
-   
+    </App_layout>
   );
 }

@@ -9,9 +9,9 @@ export default function Navbar() {
 
   // ✅ Nav links
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Product', href: '/ourproduct/product_hero' },
-    { name: 'About', href: '/about/about_us' },
+    { name: 'Home', href: '/' }, 
+    { name: 'About', href: '/about/herosection' },
+     { name: 'Product', href: '/ourproduct/product_hero' },
     { name: 'Services', href: '/services/cardsection' },
     { name: 'Contact', href: '/contact/getintouchpage' },
   ];

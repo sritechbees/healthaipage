@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import App_layout from "@/layout/app-alyout";
+import Benefits from "@/common/benefits";
 
 export default function DigitalHealthRecordsPage() {
   useEffect(() => {
@@ -146,6 +147,7 @@ export default function DigitalHealthRecordsPage() {
           ))}
         </section>
       </div>
+      <Benefits/>
     </App_layout>
   );
 }

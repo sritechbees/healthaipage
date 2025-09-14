@@ -15,7 +15,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Benefits from '@/common/benefits';
-import CGMHeroSection from './cgmherosection';
+
 
 export default function RealTimeGlucoseTracking() {
   useEffect(() => {
@@ -24,8 +24,6 @@ export default function RealTimeGlucoseTracking() {
 
   return (
     <App_layout>
-      <CGMHeroSection/>
-     
       <section className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
         {/* Background image */}
         <Image
@@ -33,7 +31,7 @@ export default function RealTimeGlucoseTracking() {
           alt="Glucose Tracking"
           fill
           priority
-          className="object-cover"
+          className="object-cover mt-24"
         />
 
         {/* Dark overlay for readability */}

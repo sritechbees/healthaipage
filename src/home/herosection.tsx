@@ -65,7 +65,7 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
             className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 text-sm sm:text-base rounded-full shadow-md transition duration-300"
           >
-            <Link href="#contact">Get Started</Link>
+            <Link href="/services/cardsection">Get Started</Link>
           </motion.button>
 
           <motion.button
@@ -73,7 +73,7 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
             className="border border-blue-300 hover:border-blue-400 text-blue-300 hover:text-blue-400 px-6 py-3 text-sm sm:text-base rounded-full transition duration-300"
           >
-            <Link href="#product">Explore Product</Link>
+            <Link href="/ourproduct/product_hero">Explore Product</Link>
           </motion.button>
         </div>
       </div>

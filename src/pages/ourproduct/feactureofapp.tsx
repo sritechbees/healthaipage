@@ -21,7 +21,7 @@ export default function AppFeatures() {
   }, []);
 
   return (
-    <section className="py-16 px-6 bg-gradient-to-br from-[#fbead1] to-[#fff]">
+    <section className="py-16 px-6 bg-gradient-to-r from-green-100 via-green-200 to-blue-300">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-[#1d2b50] mb-4">
           Features of the <span className="text-orange-500">App</span>

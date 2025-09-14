@@ -43,7 +43,7 @@ export default function CGMComparison() {
   ];
 
   return (
-    <div className="py-16 px-6 bg-gradient-to-br from-[#fdf4ff] via-[#e0f2fe] to-[#fef9c3]">
+    <div className="py-16 px-6 bg-gradient-to-r from-green-100 via-green-200 to-blue-300">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}

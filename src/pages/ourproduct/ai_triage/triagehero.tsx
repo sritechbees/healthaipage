@@ -47,7 +47,7 @@ export default function TriageHero() {
         className="absolute -bottom-20 -left-10 w-72 h-72 bg-cyan-300 rounded-full blur-3xl opacity-50"
       />
 
-      <div className="container mx-auto px-6 lg:px-16 py-20 grid md:grid-cols-2 gap-10 items-center">
+      <div className="container mx-auto px-6 lg:px-16 py-32 grid md:grid-cols-2 gap-10 items-center">
         {/* Left Content */}
         <motion.div
           initial={{ x: -50, opacity: 0 }}
@@ -55,7 +55,7 @@ export default function TriageHero() {
           transition={{ duration: 1 }}
           className="z-10"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white drop-shadow-lg">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white drop-shadow-lg">
             Accelerate Patient Triage with{' '}
             <span className="text-blue-400">AI-Powered Precision</span>
           </h1>

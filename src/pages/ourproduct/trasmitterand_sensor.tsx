@@ -11,7 +11,7 @@ export default function TransmitterSensor() {
   }, []);
 
   return (
-    <section className="relative z-0 py-20 bg-gradient-to-br from-[#f8fbff] via-white to-[#e0f2fe] overflow-hidden">
+    <section className="relative z-0 py-20 bg-gradient-to-r from-green-100 via-green-200 to-blue-300 overflow-hidden">
       {/* Gradient background shapes */}
       <div className="absolute top-[-100px] right-[-100px] w-[300px] h-[300px] bg-purple-300 opacity-20 rounded-full blur-3xl z-0 animate-pulse" />
       <div className="absolute bottom-[-120px] left-[-120px] w-[300px] h-[300px] bg-yellow-300 opacity-20 rounded-full blur-3xl z-0 animate-ping" />

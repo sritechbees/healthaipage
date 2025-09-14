@@ -17,7 +17,7 @@ import Benefits from '@/common/benefits';
 export default function EarlyDetectionECG() {
   return (
     <App_layout>
-    <section className="relative w-full py-16 bg-gray-50">
+    <section className="relative w-full py-16 mt-24 bg-gradient-to-r from-green-100 via-green-200 to-blue-300">
       <div className="max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
         
         {/* Left Content */}

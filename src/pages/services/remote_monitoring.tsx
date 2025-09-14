@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import App_layout from "@/layout/app-alyout";
+import Benefits from "@/common/benefits";
 
 export default function RemoteMonitoringPage() {
   useEffect(() => {
@@ -147,6 +148,8 @@ export default function RemoteMonitoringPage() {
           ))}
         </section>
       </div>
+      <Benefits/>
     </App_layout>
+    
   );
 }

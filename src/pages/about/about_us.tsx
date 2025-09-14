@@ -62,7 +62,7 @@ export default function AboutUs() {
 
   return (
     <App_layout>
-      <HeroSection/>
+    
       {/* Sections */}
     <section className="relative py-20 px-6 bg-gradient-to-br from-gray-900 to-black">
       <div className="relative z-20 space-y-24 max-w-7xl mx-auto">

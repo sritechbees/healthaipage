@@ -13,8 +13,8 @@ export default function ScalableDigitalHealth() {
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-tr from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-24">
       {/* Background glow */}
-      <div className="absolute -top-32 right-16 w-[28rem] h-[28rem] bg-purple-400/40 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute -bottom-32 left-16 w-[30rem] h-[30rem] bg-indigo-400/30 rounded-full blur-3xl animate-pulse" />
+     <div className="absolute -top-20 -left-20 w-80 h-80 bg-yellow-300/30 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-emerald-300/30 rounded-full blur-3xl animate-pulse" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 grid md:grid-cols-2 gap-16 items-center">
         {/* Content */}

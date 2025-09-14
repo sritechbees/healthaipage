@@ -35,7 +35,7 @@ export default function Coursescard() {
           >
             <h4
               className={`text-lg font-semibold flex items-center gap-2 ${
-                darkMode ? 'text-yellow-400' : 'text-blue-800'
+                darkMode ? 'text-[#2cb9ff]' : 'text-blue-800'
               }`}
             >
               <span className="text-xl">🏥</span> Beaver HealthAI.
@@ -45,7 +45,7 @@ export default function Coursescard() {
               Healthcare{' '}
               <span
                 className={`${
-                  darkMode ? 'text-yellow-400' : 'text-[#2cb9ff]'
+                  darkMode ? 'text-[#2cb9ff]' : 'text-[#2cb9ff]'
                 }`}
               >
                 AI Products
@@ -81,7 +81,7 @@ export default function Coursescard() {
             <ul className="mt-6 space-y-3 text-lg">
               <li>
                 <Link
-                  href="/ourproduct/realtimeglucosetracking"
+                  href="/ourproduct/cgmherosection"
                   className={`hover:underline ${
                     darkMode ? 'text-gray-200' : 'text-gray-800'
                   }`}
@@ -91,7 +91,7 @@ export default function Coursescard() {
               </li>
               <li>
                 <Link
-                  href="/ourproduct/earlydetectionecg"
+                  href="/ourproduct/ecgherosection"
                   className={`hover:underline ${
                     darkMode ? 'text-gray-200' : 'text-gray-800'
                   }`}

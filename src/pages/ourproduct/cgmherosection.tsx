@@ -1,35 +1,39 @@
 "use client";
 
+import App_layout from "@/layout/app-alyout";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function CGMHeroSection() {
   return (
+    <App_layout>
     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <Image
-        src="/product/cgm hero1.jpg" // 👈 replace with your image
-        alt="CGM Background"
-        fill
-        priority
-        className="object-cover"
-      />
+      {/* ✅ Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/videos/trackyone.mp4" type="video/mp4" /> 
+        Your browser does not support the video tag.
+      </video>
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/50 z-0" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-10 text-center px-6 mt-12">
         {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight"
         >
           Continuous Glucose Monitoring <br />
-          <span className="text-yellow-400">For Smarter Health</span>
+          <span className="text-[#2cb9ff]">For Smarter Health</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -43,35 +47,56 @@ export default function CGMHeroSection() {
           with our AI-powered monitoring solutions.
         </motion.p>
 
-        {/* Button */}
-        <Link href="/ourproduct/cgmwelcomekit">
-        <motion.button
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{
-            duration: 0.6,
-            delay: 0.6,
-            type: "spring",
-            stiffness: 200,
-          }}
-          className="mt-8 px-8 py-3 bg-yellow-400 text-black font-semibold text-lg rounded-full shadow-lg hover:bg-yellow-300 transition-all duration-300"
-        >
-           Explore CGM
-        </motion.button>
-        </Link>
+        {/* Buttons */}
+        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+          {/* Explore CGM */}
+          <Link href="/ourproduct/cgmwelcomekit">
+            <motion.button
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.6,
+                type: "spring",
+                stiffness: 200,
+              }}
+              className="px-8 py-3 bg-[#2cb9ff] text-black font-semibold text-lg rounded-full shadow-lg hover:bg-[#22a4e6] transition-all duration-300"
+            >
+              Explore CGM
+            </motion.button>
+          </Link>
+
+          {/* Read More */}
+          <Link href="/ourproduct/realtimeglucosetracking">
+            <motion.button
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.9,
+                type: "spring",
+                stiffness: 200,
+              }}
+              className="px-8 py-3 border-2 border-[#2cb9ff] text-[#2cb9ff] font-semibold text-lg rounded-full shadow-lg hover:bg-[#2cb9ff] hover:text-black transition-all duration-300"
+            >
+              Read More
+            </motion.button>
+          </Link>
+        </div>
       </div>
 
       {/* Decorative Floating Circles */}
       <motion.div
-        className="absolute top-20 left-10 w-24 h-24 bg-yellow-400/30 rounded-full blur-3xl"
+        className="absolute top-20 left-10 w-24 h-24 bg-[#2cb9ff]/30 rounded-full blur-3xl"
         animate={{ y: [0, 30, 0] }}
         transition={{ duration: 6, repeat: Infinity }}
       />
       <motion.div
-        className="absolute bottom-20 right-10 w-32 h-32 bg-blue-400/30 rounded-full blur-3xl"
+        className="absolute bottom-20 right-10 w-32 h-32 bg-[#2cb9ff]/30 rounded-full blur-3xl"
         animate={{ y: [0, -30, 0] }}
         transition={{ duration: 8, repeat: Infinity }}
       />
     </section>
+    </App_layout>
   );
 }

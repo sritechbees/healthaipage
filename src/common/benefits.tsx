@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const benefits = [
   {
@@ -38,48 +38,51 @@ const benefits = [
 ];
 
 export default function Benefits() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true, easing: 'ease-in-out' });
+  }, []);
+
   return (
-    <section className="relative py-24 px-4 md:px-20 overflow-hidden text-white">
-      {/* Background Image */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/background/benifits.jpg" // ✅ Rename your uploaded image as `public/background/benefits.jpg`
-          alt="Health AI Background"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 " />
-      </div>
+    <section className="relative py-24 px-6 md:px-16 bg-gradient-to-br from-sky-50 via-white to-cyan-50 overflow-hidden">
+      {/* Decorative blobs */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-cyan-200/40 blur-3xl rounded-full -z-10" />
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-sky-300/40 blur-3xl rounded-full -z-10" />
 
       {/* Section Heading */}
-      <div className="text-center mb-16 max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Benefits of Health AI</h2>
-        <p className="text-gray-300 text-lg">
-          Discover how Artificial Intelligence is reshaping modern healthcare for better efficiency and outcomes.
+      <div className="text-center mb-16">
+        <h2
+          data-aos="fade-up"
+          className="text-4xl md:text-5xl font-extrabold text-gray-800"
+        >
+          Benefits of <span className="text-sky-500">Health AI</span>
+        </h2>
+        <p
+          data-aos="fade-up"
+          data-aos-delay="200"
+          className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
+        >
+          Discover how Artificial Intelligence is transforming modern healthcare
+          with efficiency, precision, and better patient outcomes.
         </p>
       </div>
 
-      {/* Benefit List */}
-      <div className="max-w-5xl mx-auto space-y-10">
+      {/* Benefits Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {benefits.map((item, index) => (
-          <motion.div
+          <div
             key={index}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="flex flex-col md:flex-row items-start md:items-center gap-6"
+            data-aos="zoom-in"
+            data-aos-delay={index * 100}
+            className="bg-white/70 backdrop-blur-lg shadow-lg rounded-2xl p-6 border border-sky-100 hover:shadow-2xl hover:scale-[1.02] transition"
           >
-            {/* Colored Bar + Title */}
-            <div className="min-w-[250px]">
-              <div className="h-3 w-24 bg-gradient-to-r from-indigo-300 to-blue-500 mb-2" />
-              <h3 className="text-xl font-semibold">{item.title}</h3>
-            </div>
-            {/* Description */}
-            <p className="text-gray-300 max-w-sm text-base">
+            <div className="h-1.5 w-16 bg-gradient-to-r from-sky-400 to-cyan-500 rounded-full mb-4" />
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">
+              {item.title}
+            </h3>
+            <p className="text-gray-600 text-base leading-relaxed">
               {item.description}
             </p>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>
