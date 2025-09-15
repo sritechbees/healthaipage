@@ -47,6 +47,7 @@ export default function Footer() {
             {/* Circle behind Logo with rotation */}
             <div className="relative flex items-center justify-center w-44 h-44 mb-4">
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#2cb9ff] via-gray-700 to-[#2cb9ff] opacity-80 blur-md animate-spin-slow"></div>
+              <Link href="/">
               <Image
                 src="/home/logofooter.png"
                 height={180}
@@ -54,22 +55,20 @@ export default function Footer() {
                 alt="Beaver HealthAI Logo"
                 className="relative w-36 h-auto z-10"
               />
+              </Link>
             </div>
 
-            {/* <p className="text-sm text-gray-300 text-center md:text-left">
-              Beaver HealthAI – Redefining healthcare through innovation, AI, and advanced
-              digital health systems.
-            </p> */}
+          
           </div>
 
           {/* Quick Links */}
           <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold text-[#2cb9ff] mb-4">Quick Links</h3>
             <ul className="space-y-3 text-gray-300 text-md  ">
-              <li><Link href="/about" className="hover:text-[#2cb9ff] transition">About Us</Link></li>
-              <li><Link href="/product" className="hover:text-[#2cb9ff] transition">Our Product</Link></li>
-              <li><Link href="/services" className="hover:text-[#2cb9ff] transition">Services</Link></li>
-              <li><Link href="/contact" className="hover:text-[#2cb9ff] transition">Contact</Link></li>
+              <li><Link href="/about/herosection" className="hover:text-[#2cb9ff] transition">About Us</Link></li>
+              <li><Link href="/ourproduct/product_hero" className="hover:text-[#2cb9ff] transition">Our Product</Link></li>
+              <li><Link href="/services/cardsection" className="hover:text-[#2cb9ff] transition">Services</Link></li>
+              <li><Link href="/contact/getintouchpage" className="hover:text-[#2cb9ff] transition">Contact</Link></li>
             </ul>
           </div>
 

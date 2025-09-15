@@ -9,34 +9,42 @@ import CollaborationSection from "@/home/CollaborationSection";
 import TechnologyStack from "@/home/technologies";
 import ImpactStatistics from "@/home/ImpactStatistics";
 import LatestBlogs from "@/home/LatestBlogs";
+import Head from "next/head"; // ✅ Import Head
 
 export default function Home() {
   return (
-    <div>
-      <Header />
-      <Hero />
+    <>
+      {/* ✅ SEO Metadata */}
+      <Head>
+        <title>BeaverHealthAI</title>
+        </Head>
 
-      {/* Background Wrapper Section */}
-      <div
-        className="relative bg-fixed bg-cover bg-center"
-        style={{ backgroundImage: "url('/background/teambg.jpg')" }} // <-- change path
-      >
-        <div className="relative z-10">
-          <AboutBeaverHealthAI />
-          <ExploreSolutions />
-          <WhyChoose />
-          <UseCasesSection />
-          <CollaborationSection />
-          <TechnologyStack />
-          <ImpactStatistics />
-          <LatestBlogs />
+      <div>
+        <Header />
+        <Hero />
+
+        {/* Background Wrapper Section */}
+        <div
+          className="relative bg-fixed bg-cover bg-center"
+          style={{ backgroundImage: "url('/background/teambg.jpg')" }} // <-- change path
+        >
+          <div className="relative z-10">
+            <AboutBeaverHealthAI />
+            <ExploreSolutions />
+            <WhyChoose />
+            <UseCasesSection />
+            <CollaborationSection />
+            <TechnologyStack />
+            <ImpactStatistics />
+            <LatestBlogs />
+          </div>
+
+          {/* Optional overlay for readability */}
+          <div className="absolute inset-0 bg-black/40 z-0"></div>
         </div>
 
-        {/* Optional overlay for readability */}
-        <div className="absolute inset-0 bg-black/40 z-0"></div>
+        <Footer />
       </div>
-
-      <Footer />
-    </div>
+    </>
   );
 }

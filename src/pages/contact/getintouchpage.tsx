@@ -4,10 +4,13 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import App_layout from '@/layout/app-alyout';
+import Head from 'next/head';
+
 
 interface ContactFormInputs {
   name: string;
   email: string;
+  mobile: string;
   message: string;
 }
 
@@ -38,6 +41,9 @@ export default function GetInTouchPage() {
 
   return (
     <App_layout>
+     <Head  >
+      <title>BeaverHealthAI | Contact</title>
+     </Head>
       <section
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat px-6 py-20"
         style={{ backgroundImage: "url('/background/bghand.jpg')" }}
@@ -89,9 +95,7 @@ export default function GetInTouchPage() {
                   placeholder="Your Name"
                 />
                 {errors.name && (
-                  <p className="text-red-400 text-sm mt-1">
-                    Name is required
-                  </p>
+                  <p className="text-red-400 text-sm mt-1">Name is required</p>
                 )}
               </div>
 
@@ -109,9 +113,25 @@ export default function GetInTouchPage() {
                   placeholder="you@example.com"
                 />
                 {errors.email && (
-                  <p className="text-red-400 text-sm mt-1">
-                    Valid email is required
-                  </p>
+                  <p className="text-red-400 text-sm mt-1">Valid email is required</p>
+                )}
+              </div>
+
+              {/* Mobile Number */}
+              <div>
+                <label className="block mb-1 font-medium text-white">
+                  Mobile Number
+                </label>
+                <input
+                  {...register('mobile', {
+                    required: true,
+                    pattern: /^[0-9]{10}$/, // ✅ 10-digit validation
+                  })}
+                  className="w-full p-3 rounded-xl border border-gray-300/30 bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#2cb9ff]"
+                  placeholder="Enter 10-digit Mobile Number"
+                />
+                {errors.mobile && (
+                  <p className="text-red-400 text-sm mt-1">Valid 10-digit mobile number is required</p>
                 )}
               </div>
 
@@ -127,9 +147,7 @@ export default function GetInTouchPage() {
                   placeholder="How can we help you?"
                 ></textarea>
                 {errors.message && (
-                  <p className="text-red-400 text-sm mt-1">
-                    Message is required
-                  </p>
+                  <p className="text-red-400 text-sm mt-1">Message is required</p>
                 )}
               </div>
 

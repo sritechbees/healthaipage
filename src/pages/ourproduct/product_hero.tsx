@@ -1,13 +1,19 @@
 'use client';
 
 import HealthcareProductHero from '@/common/healthcareproducthero';
-import App_layout from '@/layout/app-alyout';
+import Head from 'next/head'; // ✅ Import Head
 
 export default function ProductHeroModern() {
   return (
-    <div>
-      <HealthcareProductHero/>
+    <>
+      {/* ✅ SEO Metadata */}
+      <Head>
+        <title>BeaverHealthAI | Healthcare AI Products</title>
+        </Head>
+
+      <div>
+        <HealthcareProductHero />
       </div>
-       
+    </>
   );
 }

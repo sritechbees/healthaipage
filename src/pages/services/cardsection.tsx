@@ -3,6 +3,7 @@
 
 import App_layout from '@/layout/app-alyout';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -42,7 +43,9 @@ const services = [
 export default function ServicesCard() {
   return (
     <App_layout>
-     
+     <Head>
+      <title>BeaverHealthAI | Healthcare AI Services</title>
+     </Head>
       <section className="bg-gradient-to-r from-gray-100 to-gray-200 py-16 mt-24 mt-12">
        <div className="max-w-7xl mx-auto text-center mb-16 px-6" data-aos="fade-up">
   {/* Gradient Title */}
