@@ -77,7 +77,7 @@ const ExploreSolutions_Trending = () => {
   }, []);
 
   return (
-    <section className="relative py-16 px-6 md:px-16 lg:px-24 bg-[#0f172a] text-white overflow-hidden">
+    <section className="relative py-16 px-6 md:px-16 lg:px-24 bg-gradient-to-r from-blue-950/80 via-black/70 to-blue-900/70 text-white overflow-hidden">
       {/* Background Glow Shapes */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full -z-10"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl rounded-full -z-10"></div>

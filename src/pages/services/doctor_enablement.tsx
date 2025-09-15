@@ -62,14 +62,14 @@ export default function DoctorEnablementParallax() {
     <App_layout>
       <div className="font-poppins bg-gradient-to-b from-cyan-50 via-white to-blue-100 overflow-hidden">
         {/* Hero Section */}
-        <section className="relative w-full min-h-[90vh] flex items-center justify-center text-center text-white overflow-hidden">
+        <section className="relative w-full min-h-[100vh] flex items-center justify-center text-center text-white overflow-hidden">
           <Image
             src="/services/Doctor Enablement1.jpg"
             alt="Doctor Enablement"
             fill
             className="object-cover brightness-50 mt-24"
           />
-          <div className="relative z-10 max-w-3xl px-6">
+          <div className="relative z-10 max-w-3xl px-6 mt-24">
             <motion.h1
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}

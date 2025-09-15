@@ -11,7 +11,7 @@ export default function AboutBeaverHealthAI_Dark() {
   }, []);
 
   return (
-    <section className="relative bg-gray-900 py-16 px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative bg-gradient-to-r from-blue-950/80 via-black/70 to-blue-900/70 py-16 px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background Neon Glow */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-10 left-20 w-72 h-72 bg-blue-600/30 rounded-full blur-3xl"></div>

@@ -58,7 +58,7 @@ export default function ImpactStatistics() {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-b from-indigo-50 via-white to-indigo-100 py-24 overflow-hidden">
+    <section className="relative bg-gradient-to-r from-green-100 via-green-200 to-blue-300 py-24 overflow-hidden">
       {/* Glow Orbs */}
       <div className="absolute -top-10 -left-10 w-72 h-72 bg-pink-400 opacity-30 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-400 opacity-30 rounded-full blur-3xl animate-pulse"></div>
