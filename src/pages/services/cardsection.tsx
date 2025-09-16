@@ -46,7 +46,7 @@ export default function ServicesCard() {
      <Head>
       <title>BeaverHealthAI | Healthcare AI Services</title>
      </Head>
-      <section className="bg-gradient-to-r from-gray-100 to-gray-200 py-16 mt-24 mt-12">
+      <section className="bg-gradient-to-r from-gray-100 to-gray-200 py-16 mt-24">
        <div className="max-w-7xl mx-auto text-center mb-16 px-6" data-aos="fade-up">
   {/* Gradient Title */}
   <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-[#2cb9ff] to-blue-600 bg-clip-text text-transparent">

@@ -54,7 +54,7 @@ export default function GetInTouchPage() {
         <div className="relative z-10 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div data-aos="fade-right" className="text-white space-y-6">
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+            <h1 className="text-4xl max-sm:mt-4 md:text-5xl font-extrabold leading-tight">
               Let’s <span className="text-[#2cb9ff]">Transform Healthcare</span> Together
             </h1>
             <div className="w-20 h-1 bg-gradient-to-r from-[#2cb9ff] to-blue-400 rounded-full"></div>
@@ -62,8 +62,8 @@ export default function GetInTouchPage() {
               Connect with <span className="font-semibold">BeaverHealthAI</span> for partnerships, support, and innovative healthcare solutions that redefine patient care.
             </p>
             <ul className="space-y-3 text-gray-300 text-base">
-              <li>📧 support@beaverhealthai.com</li>
-              <li>📞 +91 98765 43210</li>
+              <li>📧 healthai@beavertek.com</li>
+              <li>📞 +91 +91 94452 66583</li>
               <li>📍 Chennai, India</li>
             </ul>
           </div>

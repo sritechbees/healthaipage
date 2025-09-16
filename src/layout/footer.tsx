@@ -87,7 +87,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold text-[#2cb9ff] mb-4">Contact</h3>
             <p className="text-md text-gray-300 mb-3">
-              Email: <a href="mailto:support@beaverhealthai.com" className="text-[#2cb9ff]">support@beaverhealthai.com</a>
+              Email: <a href="mailto:support@beaverhealthai.com" className="text-[#2cb9ff]">healthai@beavertek.com</a>
             </p>
             <p className="text-md text-gray-300 mb-3">Phone (India): +91 94452 66583</p>
             <p className="text-md text-gray-300 mb-3">Phone (USA): +1 949-351-9624</p>
