@@ -14,7 +14,7 @@ const conditions: ConditionProps[] = [
   {
     title: "Hypertension",
     text: "Monitor and manage blood pressure in real-time with intelligent health alerts.",
-    image: "/product/hypertension.jpg",
+    image: "/product/Hypertension.jpg",
   },
   {
     title: "Diabetes",
