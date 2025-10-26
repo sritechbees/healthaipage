@@ -31,11 +31,12 @@ export default function WhyChooseBeaverHealthAI() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="relative w-full min-h-[90vh] flex flex-col lg:flex-row overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[url('/background/solutionbg.jpg')] bg-cover bg-center opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/80 via-black/70 to-blue-900/70" />
+    <section className="relative w-full min-h-[90vh] flex flex-col lg:flex-row overflow-hidden bg-gradient-to-r from-gray-100 via-white to-gray-200">
+      {/* Smokey Background Shapes */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-10 left-20 w-72 h-72 bg-gray-300/40 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-20 w-96 h-96 bg-gray-400/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-40 right-40 w-80 h-80 bg-gray-200/50 rounded-full blur-2xl"></div>
       </div>
 
       {/* Left Side */}
@@ -49,9 +50,9 @@ export default function WhyChooseBeaverHealthAI() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-3xl md:text-4xl font-extrabold text-white mb-10"
+          className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-10"
         >
-          Why Choose <span className="text-blue-400">BeaverHealthAI?</span>
+          Why Choose <span className="text-blue-600">BeaverHealthAI?</span>
         </motion.h2>
 
         <div className="flex flex-col gap-5">
@@ -67,12 +68,12 @@ export default function WhyChooseBeaverHealthAI() {
               className={`relative text-left p-4 rounded-xl border transition-all duration-300 group overflow-hidden ${
                 idx === activeIndex
                   ? 'bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 border-blue-400 text-white font-semibold shadow-lg shadow-blue-500/40'
-                  : 'bg-white/10 border-gray-500/30 text-gray-200 hover:bg-white/20'
+                  : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-100'
               }`}
             >
               <span className="relative z-10">{item.title}</span>
               {/* Glow effect */}
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
             </motion.button>
           ))}
         </div>
@@ -93,8 +94,8 @@ export default function WhyChooseBeaverHealthAI() {
             fill
             className="object-cover rounded-none"
           />
-          {/* AI Glow Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-blue-900/30 to-transparent mix-blend-overlay" />
+          {/* Light Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 via-gray-400/20 to-transparent mix-blend-overlay" />
         </motion.div>
 
         {/* Floating AI particles */}
@@ -102,7 +103,7 @@ export default function WhyChooseBeaverHealthAI() {
           {Array.from({ length: 15 }).map((_, i) => (
             <motion.span
               key={i}
-              className="absolute w-2 h-2 rounded-full bg-cyan-400/70"
+              className="absolute w-2 h-2 rounded-full bg-blue-400/70"
               initial={{
                 x: Math.random() * 600,
                 y: Math.random() * 600,

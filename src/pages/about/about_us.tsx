@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { FaArrowRight } from 'react-icons/fa';
 import { useState } from 'react';
-import HeroSection from './herosection';
 import KeyFeatures from './keyfeatures';
 import WhatWeDo from './whatwedo';
 import HealthAIFAQ from '@/common/faq';

@@ -77,17 +77,18 @@ const ExploreSolutions_Trending = () => {
   }, []);
 
   return (
-    <section className="relative py-16 px-6 md:px-16 lg:px-24 bg-gradient-to-r from-blue-950/80 via-black/70 to-blue-900/70 text-white overflow-hidden">
-      {/* Background Glow Shapes */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl rounded-full -z-10"></div>
+    <section className="relative py-16 px-6 md:px-16 lg:px-24 bg-gradient-to-r from-gray-100 via-white to-gray-200 text-gray-900 overflow-hidden">
+      {/* Background Smokey Glow */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-gray-300/40 blur-3xl rounded-full -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gray-400/30 blur-3xl rounded-full -z-10"></div>
+      <div className="absolute top-40 right-40 w-80 h-80 bg-gray-200/50 blur-2xl rounded-full -z-10"></div>
 
       {/* Section Title */}
       <div className="text-center mb-16" data-aos="fade-up">
-        <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+        <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
           Explore Our Solutions
         </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto mt-4">
+        <p className="text-gray-600 max-w-2xl mx-auto mt-4">
           Discover AI-driven solutions revolutionizing healthcare, diagnostics, and patient engagement.
         </p>
       </div>
@@ -99,7 +100,7 @@ const ExploreSolutions_Trending = () => {
             key={i}
             data-aos="zoom-in"
             data-aos-delay={i * 150}
-            className="relative group rounded-2xl overflow-hidden shadow-md bg-white/5 border border-white/20 backdrop-blur-md hover:shadow-2xl transition-all duration-500 h-72"
+            className="relative group rounded-2xl overflow-hidden shadow-md bg-white/70 border border-gray-300 backdrop-blur-md hover:shadow-xl transition-all duration-500 h-72"
           >
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
@@ -111,7 +112,7 @@ const ExploreSolutions_Trending = () => {
               />
               {/* Bottom Title */}
               <div className="absolute bottom-0 w-full flex justify-center">
-                <h3 className="text-blue-400 text-lg font-bold bg-black/50 w-full text-center px-3 py-2">
+                <h3 className="text-blue-600 text-lg font-bold bg-white/70 w-full text-center px-3 py-2">
                   {item.title}
                 </h3>
               </div>

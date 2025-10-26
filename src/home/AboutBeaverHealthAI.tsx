@@ -11,22 +11,22 @@ export default function AboutBeaverHealthAI_Dark() {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-r from-blue-950/80 via-black/70 to-blue-900/70 py-16 px-6 md:px-12 lg:px-24 overflow-hidden">
-      {/* Background Neon Glow */}
+    <section className="relative bg-gradient-to-r from-gray-100 via-white to-gray-200 py-16 px-6 md:px-12 lg:px-24 overflow-hidden">
+      {/* Background Smokey Glow */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-10 left-20 w-72 h-72 bg-blue-600/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-20 w-96 h-96 bg-purple-600/30 rounded-full blur-3xl"></div>
-        <div className="absolute top-40 right-40 w-80 h-80 bg-yellow-500/20 rounded-full blur-2xl"></div>
+        <div className="absolute top-10 left-20 w-72 h-72 bg-gray-300/40 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-20 w-96 h-96 bg-gray-400/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-40 right-40 w-80 h-80 bg-gray-200/50 rounded-full blur-2xl"></div>
       </div>
 
       {/* Title */}
       <div className="max-w-3xl mx-auto text-center mb-14" data-aos="fade-up">
-        <h2 className="text-4xl md:text-5xl font-bold text-white leading-snug">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-snug">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
             BeaverHealthAI
           </span>
         </h2>
-        <p className="mt-4 text-lg md:text-xl text-gray-300">
+        <p className="mt-4 text-lg md:text-xl text-gray-700">
           AI-Powered Healthcare • Smart Platforms • Predictive Data
         </p>
       </div>
@@ -37,21 +37,21 @@ export default function AboutBeaverHealthAI_Dark() {
           {
             title: 'Smart Medical Supply',
             desc: 'AI-driven logistics delivering critical medical devices, prosthetics, and healthcare tools worldwide.',
-            icon: <FaHospitalUser className="text-5xl text-blue-400 drop-shadow-glow" />,
+            icon: <FaHospitalUser className="text-5xl text-blue-500 drop-shadow-glow" />,
             aos: 'flip-left',
             bg: "/home/Medical_Supply.jpg",
           },
           {
             title: 'AI Health Platforms',
             desc: 'Virtual monitoring, AI triaging, and patient engagement tools that redefine hospital-free healthcare.',
-            icon: <FaHeartbeat className="text-5xl text-pink-400 drop-shadow-glow" />,
+            icon: <FaHeartbeat className="text-5xl text-pink-500 drop-shadow-glow" />,
             aos: 'flip-left',
             bg: "/home/Health_Platforms.jpg",
           },
           {
             title: 'Predictive Intelligence',
             desc: 'Harnessing real-time data & machine learning for faster diagnoses and precision treatment plans.',
-            icon: <FaRobot className="text-5xl text-purple-400 drop-shadow-glow" />,
+            icon: <FaRobot className="text-5xl text-purple-500 drop-shadow-glow" />,
             aos: 'flip-left',
             bg: "/home/Predictive_Intelligence.jpg",
           },
@@ -74,7 +74,7 @@ export default function AboutBeaverHealthAI_Dark() {
               <h3 className="text-xl font-semibold text-white text-center mb-3 group-hover:text-blue-400 transition-colors duration-300">
                 {item.title}
               </h3>
-              <p className="text-gray-400 group-hover:text-white text-center leading-relaxed">{item.desc}</p>
+              <p className="text-gray-300 group-hover:text-white text-center leading-relaxed">{item.desc}</p>
             </div>
 
             {/* Neon underline effect */}

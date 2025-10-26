@@ -20,9 +20,16 @@ export default function PhotoShootSection() {
   const [activeTitle, setActiveTitle] = useState(0);
 
   return (
-    <section className="relative w-full bg-gray-50 py-20">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        {/* Swiper with Fade effect */}
+    <section className="relative w-full py-20 bg-gradient-to-r from-gray-100 via-white to-gray-200 overflow-hidden">
+      {/* Smokey White Glows */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-10 left-20 w-72 h-72 bg-gray-300/40 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-20 w-96 h-96 bg-gray-400/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-40 right-40 w-80 h-80 bg-gray-200/50 rounded-full blur-2xl"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
+        {/* Swiper with Fade Effect */}
         <Swiper
           modules={[Autoplay, EffectFade]}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -42,14 +49,15 @@ export default function PhotoShootSection() {
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-black/40" />
+                {/* Dark overlay for better text contrast */}
+                <div className="absolute" />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/* Animated Titles */}
-        <div className="mt-10 h-16 flex items-center justify-center">
+        <div className="mt-10 h-16 flex items-center justify-center relative">
           {slides.map((slide, index) => (
             <h2
               key={index}

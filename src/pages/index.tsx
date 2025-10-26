@@ -26,7 +26,7 @@ export default function Home() {
         {/* Background Wrapper Section */}
         <div
           className="relative bg-fixed bg-cover bg-center"
-          style={{ backgroundImage: "url('/background/teambg.jpg')" }} // <-- change path
+          style={{ backgroundColor:"whitesmoke" }} // <-- change path
         >
           <div className="relative z-10">
             <AboutBeaverHealthAI />

@@ -88,7 +88,8 @@ export default function Navbar() {
           ))}
           <Link href="/contact/getintouchpage" onClick={() => setIsOpen(false)}>
             <button
-              className={`w-full px-5 py-2 rounded-lg font-semibold transition ${
+              className={`w-full px-5 py-2 rounded-lg max-sm:w-36
+                 font-semibold transition ${
                 pathname === '/contact/getintouchpage'
                   ? 'bg-blue-500 text-white shadow-lg'
                   : 'bg-blue-400 hover:bg-blue-500 text-white'

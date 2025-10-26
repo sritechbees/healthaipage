@@ -53,7 +53,7 @@ export default function GetInTouchPage() {
 
         <div className="relative z-10 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div data-aos="fade-right" className="text-white space-y-6">
+          <div data-aos="fade-right" className="text-white space-y-6 max-md:mt-20">
             <h1 className="text-4xl max-sm:mt-4 md:text-5xl font-extrabold leading-tight">
               Let’s <span className="text-[#2cb9ff]">Transform Healthcare</span> Together
             </h1>
