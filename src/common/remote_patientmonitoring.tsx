@@ -41,7 +41,7 @@ export default function RemotePatientMonitoring() {
             <video
               ref={videoRef}
               className="w-full h-[550px] object-cover"
-              src="/videos/healthai.mp4"
+              src="/videos/health.mp4"
               poster="/videos/healthai.mp4"
               autoPlay
               loop
