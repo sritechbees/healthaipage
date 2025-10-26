@@ -79,6 +79,16 @@ export default function Coursescard() {
 
             {/* List of Products with Links */}
             <ul className="mt-6 space-y-3 text-lg">
+                <li>
+                <Link
+                  href="/ourproduct/remote_patient/remote_patienthero"
+                  className={`hover:underline ${
+                    darkMode ? 'text-gray-200' : 'text-gray-800'
+                  }`}
+                >
+                  ✔ Remote Patient Monitoring (RPM)
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/ourproduct/cgmherosection"
@@ -89,6 +99,7 @@ export default function Coursescard() {
                   ✔ Continuous Glucose Monitoring (CGM)
                 </Link>
               </li>
+              
               <li>
                 <Link
                   href="/ourproduct/ecgherosection"
