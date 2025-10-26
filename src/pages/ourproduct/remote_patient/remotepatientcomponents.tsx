@@ -14,6 +14,7 @@ import {
 import ConditionsManaged from "./conditions_managed";
 import RemotePatientBenefits from "./benefitssection";
 import RemotePatientMonitoring from "@/common/remote_patientmonitoring";
+import ImageHoverTextSection from "@/common/imagehovertextsection";
 
 const components = [
   {
@@ -64,13 +65,14 @@ export default function RemotePatientComponents() {
           <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-yellow-400/10 blur-[150px]" />
         </div>
         <RemotePatientMonitoring />
+        <ImageHoverTextSection/>
       </div>
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/2 w-[700px] h-[700px] bg-yellow-500/10 blur-[150px] rounded-full -translate-x-1/2" />
         </div>
 
         {/* Section Header */}
-        <div className="relative z-10 text-center mb-16 px-4">
+        <div className="relative z-10 text-center mb-16 mt-16 px-4">
           <h2
             data-aos="fade-down"
             className="text-3xl md:text-5xl font-bold mb-4 text-yellow-400"
