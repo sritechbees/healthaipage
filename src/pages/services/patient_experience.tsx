@@ -93,7 +93,7 @@ export default function PatientExperiencePage3() {
           id="features"
           className="relative w-full py-20 bg-gradient-to-br from-yellow-50 via-white to-emerald-50"
         >
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-6xl mx-auto px-6 mt-12">
             {features.map((feature, idx) => (
               <div
                 key={idx}
