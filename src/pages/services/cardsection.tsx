@@ -58,7 +58,7 @@ export default function ServicesCard() {
 
   {/* Subtitle */}
   <p className="text-gray-500 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-    Harness the power of <span className="font-semibold text-[#2cb9ff]">AI-driven healthcare</span>  
+    Harness the power of <span className="font-semibold text-[#2cb9ff]">AI-driven healthcare </span>  
     to improve patient outcomes, streamline workflows, and unlock the future of smart medicine.
   </p>
 </div>

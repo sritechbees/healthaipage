@@ -134,7 +134,7 @@ const ExploreSolutions_Trending = () => {
               />
               <h3 className="text-lg font-semibold text-blue-400 text-center">{item.title}</h3>
               <p className="text-sm mt-1 text-gray-200 text-center px-4">{item.description}</p>
-              <Link href="/book_now" className="mt-3">
+              <Link href="/contact/getintouchpage/" className="mt-3">
                 <FaArrowUpRightFromSquare className="text-lg hover:text-blue-400 transition-colors" />
               </Link>
             </div>

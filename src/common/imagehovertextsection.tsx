@@ -1,98 +1,50 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Image from "next/image";
 
-type Side = "left" | "right" | null;
-
-export default function ImageHoverTextSection() {
-  const [active, setActive] = useState<Side>(null);
-
-  const handleEnter = (side: Side) => setActive(side);
-  const handleLeave = () => setActive(null);
-
-  const caption = {
-    left: {
-      title: "Remote Vitals Tracking",
-      lines: [
-        "Continuous heart rate & BP monitoring",
-        "Instant AI-powered alerts",
-      ],
-      image: "/product/patient care.png",
-    },
-    right: {
-      title: "Patient Teleconsult",
-      lines: ["Video visits & secure messaging", "Care history at your fingertips"],
-      image: "/product/patient care1.png",
-    },
-  };
-
-  const overlayVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.98 },
-    visible: { opacity: 1, y: 0, scale: 1 },
-  };
+export default function SingleImageAOSSection() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
   return (
-    <section className="w-full px-6 md:px-12 bg-gradient-to-b from-gray-950 to-black text-white font-poppins">
-      <div className="max-w-6xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl md:text-5xl font-bold text-center mb-12"
+    <section className="w-full bg-gradient-to-b from-gray-950 to-black text-white font-poppins px-6 md:px-12">
+      <div
+        className="max-w-5xl mx-auto text-center"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        {/* Title */}
+        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-yellow-400 drop-shadow-lg">
+          Patient Health Monitoring
+        </h2>
+
+        {/* Subtitle */}
+        <p className="text-gray-300 text-sm md:text-lg mb-12 leading-relaxed max-w-2xl mx-auto">
+          Experience the power of real-time AI-driven healthcare insights with
+          HDome — ensuring smarter, faster, and more connected patient care.
+        </p>
+
+        {/* Image Container */}
+        <div
+          className="relative rounded-3xl overflow-hidden shadow-2xl border border-yellow-500/20 hover:border-yellow-400/40 transition-all duration-500"
+          data-aos="zoom-in"
+          data-aos-delay="200"
         >
-          Patient Care From Home
-        </motion.h2>
+          <Image
+            src="/product/image1.jpeg"
+            alt="Patient Care Monitoring"
+            width={1200}
+            height={700}
+            className="object-cover w-full h-[400px] md:h-[600px] hover:scale-105 transition-transform duration-700"
+            priority
+          />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {(["left", "right"] as Side[]).map((side) => (
-            <div
-              key={side}
-              onMouseEnter={() => handleEnter(side)}
-              onMouseLeave={handleLeave}
-              className="relative rounded-2xl overflow-hidden shadow-2xl cursor-pointer group"
-            >
-              <div className="relative w-full h-80 md:h-[450px] overflow-hidden rounded-2xl">
-                <Image
-                  src={caption[side!].image}
-                  alt={caption[side!].title}
-                  fill
-                  className="object-cover transform transition-transform duration-700 group-hover:scale-110"
-                  priority
-                />
-              </div>
-
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
-
-              {/* Text overlay */}
-              <AnimatePresence>
-                {active === side && (
-                  <motion.div
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
-                    variants={overlayVariants}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-5 shadow-lg"
-                  >
-                    <h3 className="text-xl md:text-2xl font-semibold text-yellow-400">
-                      {caption[side!].title}
-                    </h3>
-                    <p className="mt-3 text-gray-200 text-sm md:text-base leading-snug">
-                      {caption[side!].lines[0]}
-                      <br />
-                      {caption[side!].lines[1]}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              {/* Glow border animation */}
-              <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-yellow-400/40 transition-all duration-500" />
-            </div>
-          ))}
+          {/* Overlay text (optional) */}
+        
         </div>
       </div>
     </section>

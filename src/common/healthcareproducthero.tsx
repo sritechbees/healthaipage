@@ -123,14 +123,17 @@ export default function Coursescard() {
             </ul>
 
             {/* Contact Info */}
-            <div
-              className={`mt-6 flex items-center gap-6 font-medium ${
-                darkMode ? 'text-gray-300' : 'text-gray-900'
-              }`}
-            >
-              <p>📞 9443604461</p>
-              <p>🌐 www.healthcareai.com</p>
-            </div>
+           <div
+  className={`mt-6 flex items-center gap-6 font-medium ${
+    darkMode ? 'text-gray-300' : 'text-gray-900'
+  }`}
+>
+  <p>📞 +91 9443604461</p>
+  <p>🌐 
+    <Link href="https://www.google.com/search?q=info%40beavertek.com">
+                <span className=" hover:text-[#2cb9ff] hover:underline"> healthai@beavertek.com</span>
+              </Link></p>
+</div>
 
             {/* Dark Mode Toggle */}
             <div className="mt-8">

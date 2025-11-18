@@ -63,7 +63,7 @@ export default function AboutUs() {
     <App_layout>
     
       {/* Sections */}
-    <section className="relative py-20 px-6 bg-gradient-to-br from-gray-900 to-black">
+    <section className="relative py-20 mt-12 px-6 bg-gradient-to-br from-gray-900 to-black">
       <div className="relative z-20 space-y-24 max-w-7xl mx-auto">
         {sections.map((sec, i) => (
           <motion.div

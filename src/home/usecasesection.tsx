@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+
 
 const useCases = [
   {
@@ -87,7 +87,7 @@ export default function UseCasesSection() {
               </h3>
 
               {/* Popup Content */}
-              <div className="absolute bottom-0 left-0 right-0 h-[70%] translate-y-full group-hover:translate-y-0 transition-all duration-700 ease-in-out">
+              <div className="absolute bottom-0 left-0 right-0 h-[50%] translate-y-full group-hover:translate-y-0 transition-all duration-700 ease-in-out">
                 <div className="h-full w-full bg-gradient-to-t from-white via-gray-100/95 to-transparent rounded-t-[30%] p-8 flex flex-col items-center justify-center text-center shadow-inner">
                   <h3 className="text-xl font-bold text-blue-600">
                     {item.title}
@@ -95,9 +95,7 @@ export default function UseCasesSection() {
                   <p className="text-gray-700 mt-3 text-sm">
                     {item.description}
                   </p>
-                  <button className="mt-5 flex items-center justify-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors">
-                    Learn More <ArrowRight size={18} />
-                  </button>
+                 
                 </div>
               </div>
             </div>
