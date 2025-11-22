@@ -23,7 +23,7 @@ export default function AboutHeroSection() {
 
   return (
     <App_layout>
-      {/* ✅ SEO Meta Data */}
+      {/* SEO Meta Data */}
       <Head>
         <title>BeaverHealthAI | About Us</title>
         <meta
@@ -33,7 +33,7 @@ export default function AboutHeroSection() {
       </Head>
 
       <section className="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0a0f2c] via-[#111827] to-black text-white">
-        {/* ✅ Background Image */}
+        {/* Background Image */}
         <Image
           src="/background/aboutbg.jpg"
           alt="Healthcare AI Background"
@@ -70,7 +70,7 @@ export default function AboutHeroSection() {
 
         {/* Content */}
         <div
-          className="relative z-10 max-w-5xl text-center px-4  sm:px-6 max-sm:mt-12 md:px-8 py-16 sm:py-20 md:py-28"
+          className="relative z-10 max-w-5xl text-center px-4 sm:px-6 max-sm:mt-12 md:px-8 py-16 sm:py-20 md:py-28"
           data-aos="fade-up"
         >
           {/* Title */}
@@ -97,7 +97,7 @@ export default function AboutHeroSection() {
             platforms, and data intelligence for a smarter, healthier tomorrow.
           </motion.p>
 
-          {/* Buttons */}
+          {/* Only ONE button now — Our Journey */}
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             data-aos="zoom-in"
@@ -106,12 +106,6 @@ export default function AboutHeroSection() {
             <Link href="/about/about_us">
               <button className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-[#2cb9ff] text-black font-semibold text-sm sm:text-base md:text-lg rounded-full shadow-lg hover:bg-[#22a4e6] transition-all duration-300">
                 Our Journey
-              </button>
-            </Link>
-
-            <Link href="/contact/getintouchpage">
-              <button className="w-full sm:w-auto px-6 sm:px-8 py-3 border-2 border-[#2cb9ff] text-[#2cb9ff] font-semibold text-sm sm:text-base md:text-lg rounded-full shadow-lg hover:bg-[#2cb9ff] hover:text-black transition-all duration-300">
-                Contact Us
               </button>
             </Link>
           </div>

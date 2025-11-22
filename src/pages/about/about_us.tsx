@@ -10,17 +10,17 @@ import WhatWeDo from './whatwedo';
 import HealthAIFAQ from '@/common/faq';
 
 const sections = [
-   {
-      title: "Our Story",
-      text: "Founded with a vision to revolutionize healthcare through AI, our journey began with a small team passionate about technology and human well-being.",
-      image: "/about/our-story.jpg", // 🔹 Replace with your image
-      accent: "from-yellow-400 to-orange-500",
-      extra: [
-        "We started as a research-driven initiative, exploring how AI could solve real healthcare challenges.",
-        "Over the years, we partnered with hospitals, diagnostic centers, and startups to expand our solutions.",
-        "Today, our ecosystem brings together AI, healthcare professionals, and patients for smarter, faster care."
-      ],
-    },
+  {
+    title: "Our Story",
+    text: "Founded with a vision to revolutionize healthcare through AI, our journey began with a small team passionate about technology and human well-being.",
+    image: "/about/our-story.jpg",
+    accent: "from-yellow-400 to-orange-500",
+    extra: [
+      "We started as a research-driven initiative, exploring how AI could solve real healthcare challenges.",
+      "Over the years, we partnered with hospitals, diagnostic centers, and startups to expand our solutions.",
+      "Today, our ecosystem brings together AI, healthcare professionals, and patients for smarter, faster care."
+    ],
+  },
   {
     title: 'Our Vision',
     text: 'To create a smarter and healthier future by bridging AI technology with healthcare, ensuring accessibility, affordability, and excellence for every individual.',
@@ -61,84 +61,89 @@ export default function AboutUs() {
 
   return (
     <App_layout>
-    
+
       {/* Sections */}
-    <section className="relative py-20 mt-12 px-6 bg-gradient-to-br from-gray-900 to-black">
-      <div className="relative z-20 space-y-24 max-w-7xl mx-auto">
-        {sections.map((sec, i) => (
-          <motion.div
-            key={i}
-            className={`flex flex-col md:flex-row items-center gap-10 ${
-              i % 2 !== 0 ? "md:flex-row-reverse" : ""
-            }`}
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: i * 0.3 }}
-            viewport={{ once: true }}
-          >
-            {/* Image block */}
-            <div className="relative group md:w-1/2 w-full overflow-hidden rounded-2xl shadow-xl">
-              <Image
-                src={sec.image}
-                alt={sec.title}
-                width={600}
-                height={400}
-                className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-black/10 opacity-80 group-hover:opacity-60 transition-all" />
-            </div>
-
-            {/* Text block */}
+      <section className="relative py-20 mt-12 px-6 bg-gradient-to-br from-gray-900 to-black">
+        <div className="relative z-20 space-y-24 max-w-7xl mx-auto">
+          {sections.map((sec, i) => (
             <motion.div
-              className="md:w-1/2 w-full"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.4 }}
+              key={i}
+              className={`flex flex-col md:flex-row items-center gap-10 ${
+                i % 2 !== 0 ? "md:flex-row-reverse" : ""
+              }`}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: i * 0.3 }}
+              viewport={{ once: true }}
             >
-              <h2
-                className={`text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${sec.accent} mb-4`}
-              >
-                {sec.title}
-              </h2>
-              <p className="text-gray-200 text-lg leading-relaxed mb-6">
-                {sec.text}
-              </p>
+              {/* Image block */}
+              <div className="relative group md:w-1/2 w-full overflow-hidden rounded-2xl shadow-xl">
+                <Image
+                  src={sec.image}
+                  alt={sec.title}
+                  width={600}
+                  height={400}
+                  className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-black/10 opacity-80 group-hover:opacity-60 transition-all" />
+              </div>
 
-              {/* Learn More Button */}
-              <button
-                onClick={() => setExpanded(expanded === i ? null : i)}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold rounded-full hover:shadow-lg transition-all"
+              {/* Text block with glass effect */}
+              <motion.div
+                className="md:w-1/2 w-full bg-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-xl"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.4 }}
               >
-                {expanded === i ? "Show Less" : "Learn More"}
-                <FaArrowRight />
-              </button>
+                <h2
+                  className={`text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${sec.accent} mb-4`}
+                >
+                  {sec.title}
+                </h2>
 
-              {/* Extra lines reveal */}
-              <AnimatePresence>
-                {expanded === i && (
-                  <motion.div
-                    className="mt-4 space-y-2 text-gray-300"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    {sec.extra.map((line, idx) => (
-                      <p key={idx} className="text-base leading-relaxed">
-                        {line}
-                      </p>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                <p className="text-gray-100 text-lg leading-relaxed mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
+                  {sec.text}
+                </p>
+
+                {/* Learn More Button */}
+                <button
+                  onClick={() => setExpanded(expanded === i ? null : i)}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold rounded-full hover:shadow-lg transition-all"
+                >
+                  {expanded === i ? "Show Less" : "Learn More"}
+                  <FaArrowRight />
+                </button>
+
+                {/* Extra lines reveal */}
+                <AnimatePresence>
+                  {expanded === i && (
+                    <motion.div
+                      className="mt-4 space-y-2 text-gray-100"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      {sec.extra.map((line, idx) => (
+                        <p
+                          key={idx}
+                          className="text-base leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
+                        >
+                          {line}
+                        </p>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        ))}
-      </div>
-    </section>
-      <HealthAIFAQ/>
-      <KeyFeatures/>
-     
-      <WhatWeDo/>
+          ))}
+        </div>
+      </section>
+
+      <HealthAIFAQ />
+      <KeyFeatures />
+      <WhatWeDo />
+
     </App_layout>
   );
 }
